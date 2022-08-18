@@ -1,8 +1,8 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Hello Microverse
+# Portofolio Site
 
-> this is the hello microverse project.
+> this is the mobile version of my portofolio site 
 
 
 ## Built With
@@ -10,12 +10,9 @@
 - Frameworks
 - Technologies used
 
-## Live Demo (if available)
-
-
-
 
 ## Getting Started
+To get a local copy up and running follow these simple example steps.
 
 **This is my Day 2 at Microverse project**
 
@@ -23,10 +20,13 @@
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
+    Web Browser (e.g. Firefox, Chrome, Edge)
 
 ### Setup
+    Download the code from this repository.
 
 ### Install
+    Install the linters in your local environment to mantain your code clean 
 
 ### Usage
 
@@ -61,4 +61,5 @@ Give a ⭐️ if you like this project!
 - etc
 
 ## 📝 License
+This project is [MIT](./MIT.md) licensed.
 
