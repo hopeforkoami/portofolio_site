@@ -23,7 +23,12 @@ To get a local copy up and running follow these simple example steps.
     Web Browser (e.g. Firefox, Chrome, Edge)
 
 ### Setup
-    Download the code from this repository.
+    -using git command line
+      if you are using the git command line, please use this command in your terminal
+        git clone https://github.com/hopeforkoami/portofolio_site.git
+    -using the GitHub Desktop
+      if you are using the desktop version of github, please  click on the green "code" button and click on "Open with GitHub Desktop" 
+
 
 ### Install
     Install the linters in your local environment to mantain your code clean 
