@@ -4,7 +4,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  background: #ffffff;
+  background: #fff;
   width: 100vw;
   height: 100vh;
   background-position: 0 2.8rem;
