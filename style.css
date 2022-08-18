@@ -22,7 +22,7 @@
   font-weight: var(--fw-600);
   line-height: 28px;
   text-decoration: none;
-  font-family: 'Inter';
+  font-family: 'Inter', sans-serif;
 }
 
 .navbar_menu_button {
@@ -45,7 +45,7 @@
 }
 
 .main_section_h1 {
-  font-family: 'Inter';
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 40px;
@@ -58,7 +58,7 @@
 }
 
 .main_section_h2 {
-  font-family: 'Inter';
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 40px;
@@ -71,7 +71,7 @@
 }
 
 .main_section_p {
-  font-family: 'Inter';
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
