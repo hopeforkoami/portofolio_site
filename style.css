@@ -82,7 +82,6 @@
   flex-grow: 0;
   padding: 0.5em;
   word-wrap: break-word;
-  display: flex;  
   flex-wrap: wrap;
 }
 
