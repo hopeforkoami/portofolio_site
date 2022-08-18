@@ -1,7 +1,9 @@
 
+@import url('https://fonts.googleapis.com/css?family=Inter');
+
 .container {
   display: flex;
-  flex-direction:column ;
+  flex-direction: column ;
   background: #ffffff;
   width: 100vw;
   height: 100vh;
@@ -79,7 +81,7 @@
   font-size: 20px;
   line-height: 28px;
   text-align: center;
-  color: #172B4D;
+  color: #172b4d;
   flex: none;
   order: 1;
   flex-grow: 0;
