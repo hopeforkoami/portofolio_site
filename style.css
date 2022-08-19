@@ -205,7 +205,6 @@
   
   width: 122px;
   height: 48px;
-  left: calc(50% - 122px/2 + 0.5px);
   bottom: 8px;
   background: #36b37f;
   border-radius: 4px;
@@ -251,7 +250,6 @@
 
 .get_my_resume_button {
   height: 48px;
-  left: calc(50% - 122px/2 + 0.5px);
   bottom: 8px;
   background: #36b37f;
   border-radius: 4px;
@@ -288,7 +286,7 @@
 }
 
 .item_name {
-  font-family: 'Inter';
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 24px;
@@ -302,7 +300,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /*width: 100%;*/
   padding: 0px;
   margin-top: -0.5em;
   flex-wrap: wrap;
@@ -316,7 +313,7 @@
   padding: 8px 12px;
   background: #fff;
   border-radius: 4px;
-  font-family: 'Inter';
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 12px;
