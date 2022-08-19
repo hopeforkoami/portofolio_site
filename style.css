@@ -92,6 +92,7 @@
   flex-direction: row;
   justify-content: space-evenly;
   list-style: none;
+  padding-left: 0px;
 }
 
 .social_media_icon {
@@ -100,4 +101,118 @@
 
 #medium_icon {
   margin-top: 3px;
+}
+
+.work_section {
+  grid-column-start: 2;
+  grid-column-end: five;
+  grid-row-start: row1-start;
+  grid-row-end: 3;
+  display: grid;
+  align-items: center;
+}
+
+.work_section_title {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 52px;
+  align-items: center;
+  text-align: center;
+  color: #172B4D;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.delimiter {
+  width: 48px;
+  height: 0.5em;
+  background: #36B37E;
+  border-radius: 24px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.work_section_content {
+  display: grid;
+  align-content: space-evenly;
+}
+.work_element {
+  height: 474px;
+  border: solid 3px #EBF0EE;
+  margin-top: 2em;
+  border-radius: 8px;
+  background-color: #EBF0EE;
+  display: flex;
+  flex-direction: column;
+}
+
+.work_image {
+  height: 52%;
+}
+
+.work_details {
+  height: 48%;
+  border-radius: 8px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 1em;
+}
+
+.work_title {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #3A4A42;
+}
+
+.work_languages {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  padding: 0px;
+  margin-top: -0.5em;
+}
+
+.work_language_item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px 12px;
+  background: #EBF0EE;
+  border-radius: 4px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  color: #3A4A42;
+}
+.work_more_detail_button {
+  
+  width: 122px;
+  height: 48px;
+  left: calc(50% - 122px/2 + 0.5px);
+  bottom: 8px;
+  background: #36B37F;
+  border-radius: 4px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 24px;
+  color: #FFFFFF;
+  padding: 12px;
 }
