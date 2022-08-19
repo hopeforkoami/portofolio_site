@@ -133,12 +133,13 @@
   border-radius: 24px;
   margin-left: auto;
   margin-right: auto;
-
 }
+
 .work_section_content {
   display: grid;
   align-content: space-evenly;
 }
+
 .work_element {
   height: 474px;
   border: solid 3px #ebf0ee;
@@ -192,7 +193,7 @@
   padding: 8px 12px;
   background: #ebf0ee;
   border-radius: 4px;
-  font-family: 'Inter';
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 12px;
@@ -202,7 +203,6 @@
 }
 
 .work_more_detail_button {
-  
   width: 122px;
   height: 48px;
   bottom: 8px;
@@ -223,7 +223,6 @@
   padding: 1em;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .about_me_title {
@@ -277,12 +276,12 @@
   left: 0px;
   right: 0px;
   top: 0px;
-  bottom: 0px;background: #ebf0ee;
+  bottom: 0px;
+  background: #ebf0ee;
   border: 1px solid #c1c7d0;
   border-radius: 8px;
   padding-bottom: 3em;
   margin-top: 1em;
-  
 }
 
 .item_name {
@@ -333,4 +332,3 @@ button:hover {
 button:active {
   background-color: #008552;
 }
-
