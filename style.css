@@ -332,3 +332,99 @@ button:hover {
 button:active {
   background-color: #008552;
 }
+
+.contact_me_section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-image: url(assets/contact_section_background.svg);
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+  background-position-x: right;
+  /*padding-bottom: 2em;*/
+  justify-content: space-around;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+.contact_form_title {
+  width: 95%;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 52px;
+  text-align: center;
+  color: #172B4D;
+
+}
+.contact_form {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  gap: 1em;
+  align-items: center;
+  margin-bottom: 2em;
+  
+
+}
+.form_input {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  color: #6B778C;
+  background: #FFFFFF;
+  border: 1px solid #D0D9D4;
+  border-radius: 4px;
+  padding: 0.5em;
+  width: 90%;
+}
+.submit_button {
+  height: 48px;
+  bottom: 8px;
+  background: #36b37f;
+  border-radius: 4px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 24px;
+  color: #fff;
+  padding: 12px;
+}
+.email_div {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+  text-align: center;
+  color: #42526E;
+}
+ .end_point_div {
+  width: 50%;
+  background-color: black;
+  height: 10px;
+  border-radius: 18px;
+  margin-top: 40vh;
+ }
+ .portofolio_footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+ }
+ 
+ #contact_text_area {
+  height: 7em;
+ }
+ input:active {
+  border: 1px solid ##36b37f;
+  color: black;
+ }
