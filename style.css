@@ -429,3 +429,17 @@ input:active {
   border: 1px solid #36b37f;
   color: black;
 }
+
+.submit_button:enabled {
+  background-color: #36b37f;
+}
+
+.submit_button:hover, .submit_button:focus {
+  background: #36b37f;
+  box-shadow: 0px 8px 16px rgba(54, 179, 127, 0.24);
+  outline: none;
+}
+
+.submit_button:active {
+  background-color: #008552;
+}
