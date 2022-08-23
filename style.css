@@ -425,6 +425,6 @@ button:active {
   height: 7em;
  }
  input:active {
-  border: 1px solid ##36b37f;
+  border: 1px solid #36b37f;
   color: black;
  }
