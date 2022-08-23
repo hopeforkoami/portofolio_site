@@ -183,6 +183,7 @@
   margin-top: -0.5em;
   margin-left: auto;
   margin-right: auto;
+  float: none;
 }
 
 .work_language_item {
