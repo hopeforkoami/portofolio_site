@@ -508,10 +508,11 @@
 
   .submit_button:active {
     background-color: #008552;
-  }  
+  }
+  
 }
 
-@media screen and (min-width:320px) and (max-width:767px) {
+@media screen and (min-width: 320px) and (max-width: 767px) {
   .container {
     display: flex;
     flex-direction: column;
