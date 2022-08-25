@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@media screen and (min-width:768px) {
+
+@media screen and (min-width: 768px) {
   .container {
     display: flex;
     flex-direction: column;
@@ -20,6 +21,7 @@
     display: flex;
     justify-content: space-between;
   }
+
   .navbar_menu {
     width: 100%;
     align-items: center;
@@ -32,6 +34,7 @@
   .navbar_menu_button {
     display: none;
   }
+
   .navbar_menu_content {
     font-family: 'Inter', sans-serif;
     font-style: normal;
@@ -134,7 +137,6 @@
     margin-left: auto;
     margin-right: auto;
     flex-direction: column;
-
   }
 
   .work_section_title {
@@ -150,6 +152,7 @@
     order: 0;
     flex-grow: 0;
   }
+
   .title_line {
     display: none;
   }
@@ -258,7 +261,7 @@
     display: flex;
     flex-direction: column;
   }
-  
+
   .about_me_title {
     font-family: 'Inter', sans-serif;
     font-style: normal;
@@ -378,7 +381,6 @@
     background-color: #008552;
   }
 
-  
   .contact_me_section {
     display: flex;
     flex-direction: column;
@@ -392,7 +394,7 @@
     gap: 1em;
     margin-bottom: 1em;
   }
-  
+
   .completed_form {
     display: flex;
   }
@@ -478,6 +480,7 @@
   #contact_text_area {
     height: 7em;
   }
+
   #footer_social {
     margin-top: 5em;
   }
@@ -505,13 +508,11 @@
 
   .submit_button:active {
     background-color: #008552;
-  }
-
-  
+  }  
 }
 
 @media screen and (min-width:320px) and (max-width:767px) {
-    .container {
+  .container {
     display: flex;
     flex-direction: column;
     background: #fff;
@@ -545,6 +546,7 @@
     right: 24px;
     border-radius: 8px;
   }
+
   .navbar_menu_content {
     display: none;
   }
@@ -964,6 +966,3 @@
     background-color: #008552;
   }
 }
-
-
-
