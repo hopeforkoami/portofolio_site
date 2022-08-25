@@ -509,7 +509,6 @@
   .submit_button:active {
     background-color: #008552;
   }
-  
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
