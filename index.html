@@ -11,80 +11,90 @@
 
 <body>
   <div class="container">
-    <header>
-      <div class="toolbar">
-        <nav class="navbar">
-          <a class="navbar_welcome" href="index.html">Welcome</a>
-          <div class="navbar_menu">
-            <div class="navbar_menu_button">
-              <img src="assets/menu_icon.svg" alt="menu_icon">
+    <div class="header_first_section">
+        <header>
+        <div class="toolbar">
+          <nav class="navbar">
+            <a class="navbar_welcome" href="index.html">Welcome</a>
+            <div class="navbar_menu">
+              <div class="navbar_menu_button">
+                <img src="assets/menu_icon.svg" alt="menu_icon">
+              </div>
+              <ul class="navbar_menu_content">
+                  <li class="navbar_menu_content_element">Portofolio</li>
+                  <li class="navbar_menu_content_element">About me</li>
+                  <li class="navbar_menu_content_element">Contact</li>
+              </ul>
             </div>
-          </div>
 
-        </nav>
+          </nav>
 
-      </div>
-    </header>
-    <section class="main_section">
-      <h1 class="main_section_h1">Hey there. I'm Koami.</h1>
-      <h2 class="main_section_h2">I'm a software developer</h2>
-      <p class="main_section_p">
-        professionally trained by Microverse,
-        I can help in custom software development (according to demand),
-        website development, mobile application development,
-        network maintenance and many other IT areas.
-      </p>
-      <ul class="main_section_social">
+        </div>
+      </header>
+      <section class="main_section">
+        <h1 class="main_section_h1">Hey there. I'm Koami.</h1>
+        <h2 class="main_section_h2">I'm a software developer</h2>
+        <p class="main_section_p">
+          professionally trained by Microverse,
+          I can help in custom software development (according to demand),
+          website development, mobile application development,
+          network maintenance and many other IT areas.
+        </p>
+        <ul class="main_section_social">
 
-        <li>
-          <a class="social_media_icon">
-            <img src="assets/twitter.svg" alt="twitter icon " />
+          <li>
+            <a class="social_media_icon">
+              <img src="assets/twitter.svg" alt="twitter icon " />
+            </a>
+          </li>
+          <li>
+            <a class="social_media_icon">
+              <img src="assets/Linkedin_icon.svg" alt="Linkedin icon " />
+            </a>
+          </li>
+          <li>
+            <a class="social_media_icon" id="medium_icon">
+              <img src="assets/medium.svg" alt="medium icon " />
+            </a>
+          </li>
+          <li>
+            <a class="social_media_icon">
+              <img src="assets/github.svg" alt="github icon " />
+            </a>
+          </li>
+          <li>
+            <a class="social_media_icon">
+              <img src="assets/angellist.svg" alt="angellist icon " />
+            </a>
+          </li>
+        </ul>
+        <div class="next_page_icon">
+          <a href=".work_section">
+            <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="1" y="1" width="40" height="40" rx="20" fill="white"></rect>
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M14.2929 17.2929C14.6834 16.9024 15.3166 16.9024 15.7071 17.2929L21 22.5858L26.2929 17.2929C26.6834 16.9024 27.3166 16.9024 27.7071 17.2929C28.0976 17.6834 28.0976 18.3166 27.7071 18.7071L21.7071 24.7071C21.3166 25.0976 20.6834 25.0976 20.2929 24.7071L14.2929 18.7071C13.9024 18.3166 13.9024 17.6834 14.2929 17.2929Z"
+                fill="#172B4D"></path>
+              <rect x="1" y="1" width="40" height="40" rx="20" stroke="#DFE1E6"></rect>
+            </svg>
           </a>
-        </li>
-        <li>
-          <a class="social_media_icon">
-            <img src="assets/Linkedin_icon.svg" alt="Linkedin icon " />
-          </a>
-        </li>
-        <li>
-          <a class="social_media_icon" id="medium_icon">
-            <img src="assets/medium.svg" alt="medium icon " />
-          </a>
-        </li>
-        <li>
-          <a class="social_media_icon">
-            <img src="assets/github.svg" alt="github icon " />
-          </a>
-        </li>
-        <li>
-          <a class="social_media_icon">
-            <img src="assets/angellist.svg" alt="angellist icon " />
-          </a>
-        </li>
-      </ul>
-      <div class="next_page_icon">
-        <a href=".work_section">
-          <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="1" y="1" width="40" height="40" rx="20" fill="white"></rect>
-            <path fill-rule="evenodd" clip-rule="evenodd"
-              d="M14.2929 17.2929C14.6834 16.9024 15.3166 16.9024 15.7071 17.2929L21 22.5858L26.2929 17.2929C26.6834 16.9024 27.3166 16.9024 27.7071 17.2929C28.0976 17.6834 28.0976 18.3166 27.7071 18.7071L21.7071 24.7071C21.3166 25.0976 20.6834 25.0976 20.2929 24.7071L14.2929 18.7071C13.9024 18.3166 13.9024 17.6834 14.2929 17.2929Z"
-              fill="#172B4D"></path>
-            <rect x="1" y="1" width="40" height="40" rx="20" stroke="#DFE1E6"></rect>
-          </svg>
-        </a>
-      </div>
+        </div>
 
-    </section>
+      </section>
+    </div>
+    
     <section class="work_section">
 
-      <h1 class="work_section_title">My Recent <br> Works</h1>
+      <h1 class="work_section_title">My Recent <br class="title_line"> Works</h1>
       <div class="delimiter">
 
       </div>
       <div class="work_section_content">
         <div class="work_element">
-          <img class="work_image" src="assets/default_work_image.svg" alt="work image" />
-
+         <!--<img class="work_image" src="assets/default_work_image.svg" alt="work image" /> --> 
+          <div class="work_image">
+            
+          </div>
 
           <div class="work_details">
             <h3 class="work_title">
@@ -187,7 +197,7 @@
         work and experience! if you like what you see and have a project you need coded,
         don't hesitate to contact me.
       </div>
-      <button class="get_my_resume_button">Get My Resume</button>
+      <button class="get_my_resume_button" type="button" >Get My Resume</button>
     </section>
     <ul class="other_items_section">
       <li class="other_item">
@@ -225,18 +235,22 @@
       </li>
     </ul>
     <footer class="portofolio_footer">
-      <div class="contact_me_section">
-        <h1 class="contact_form_title">
+      <div class="contact_me_section"> 
+        <div class="completed_form">
+          <h1 class="contact_form_title">
           I'm always interested in hearing about new projects, so if you'd like to chat please get in touch.
-        </h1>
-        <form class="contact_form" action="https://formspree.io/f/mknegjnj" method="POST">
-          <input type="text" name="clientName" class="form_input" placeholder="Full Name" maxlength="30" required>
-          <input type="email" class="form_input" name="clientEmail" placeholder="Email address" required>
-          <textarea id="contact_text_area" class="form_input" name="clientMessage" placeholder="write your message here" maxlength="500"
-            required></textarea>
-          <button class="submit_button" type="submit">Get in touch</button>
-        </form>
-        <ul class="main_section_social">
+          </h1>
+          <form class="contact_form" action="https://formspree.io/f/mknegjnj" method="POST">
+            <input type="text" name="clientName" class="form_input" placeholder="Full Name" maxlength="30" required>
+            <input type="email" class="form_input" name="clientEmail" placeholder="Email address" required>
+            <textarea id="contact_text_area" class="form_input" name="clientMessage" placeholder="write your message here" maxlength="500"
+              required></textarea>
+            <button class="submit_button" type="submit">Get in touch</button>
+          </form>
+        </div> 
+        
+
+        <ul id="footer_social" class="main_section_social">
 
           <li>
             <a class="social_media_icon">
