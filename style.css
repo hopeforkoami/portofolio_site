@@ -916,6 +916,7 @@
     line-height: 24px;
     color: #fff;
     padding: 12px;
+    transition: all 0.5s ease-out
   }
 
   .email_div {
@@ -971,4 +972,8 @@
   .submit_button:active {
     background-color: #008552;
   }
+}
+
+button {
+  transition: all 0.5s ease-out
 }
