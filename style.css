@@ -962,6 +962,10 @@
   }
 }
 
+button {
+  transition: all 0.5s ease-out;
+}
+
 button:enabled {
   background-color: #36b37f;
 }
@@ -972,8 +976,4 @@ button:hover {
 
 button:active {
   background-color: #008552;
-}
-
-button {
-  transition: all 0.5s ease-out
 }
