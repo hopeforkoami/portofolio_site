@@ -842,18 +842,6 @@
     color: #36b37e;
   }
 
-  button:enabled {
-    background-color: #36b37f;
-  }
-
-  button:hover {
-    background-color: #36b37f;
-  }
-
-  button:active {
-    background-color: #008552;
-  }
-
   .contact_me_section {
     display: flex;
     flex-direction: column;
@@ -972,6 +960,18 @@
   .submit_button:active {
     background-color: #008552;
   }
+}
+
+button:enabled {
+  background-color: #36b37f;
+}
+
+button:hover {
+  background-color: #36b37f;
+}
+
+button:active {
+  background-color: #008552;
 }
 
 button {
