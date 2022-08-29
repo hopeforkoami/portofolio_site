@@ -10,6 +10,10 @@
 - Frameworks
 - Technologies used
 
+## Live Demo 🔗
+
+Check the live demo [github](https://hopeforkoami.github.io/portofolio_site/)👈
+
 
 ## Getting Started
 To get a local copy up and running follow these simple example steps.
