@@ -6,13 +6,14 @@
     flex-direction: column;
     background: #fff;
     width: 100%;
-    height: 100vh;
     background-position: 0 2.8rem;
+    margin: 0;
   }
 
   .header_first_section {
-    background-size: 107% 118%;
+    background-size: cover;
     background-image: url(assets/main_section_background_image.svg);
+    height: 100vh;
   }
 
   .navbar {
@@ -25,6 +26,8 @@
   .navbar_menu {
     width: 100%;
     align-items: center;
+    display: flex;
+    justify-content: center;
   }
 
   .navbar_welcome {
@@ -51,6 +54,7 @@
     width: 45%;
     margin-left: auto;
     margin-right: auto;
+    justify-content: center;
   }
 
   .main_section {
@@ -79,7 +83,7 @@
     font-size: 40px;
     line-height: 35px;
     text-align: center;
-    color: #36b37e;
+    color: #26805A;
     flex: none;
     order: 0;
     flex-grow: 0;
