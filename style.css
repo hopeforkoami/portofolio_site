@@ -252,7 +252,7 @@
     width: 122px;
     height: 48px;
     bottom: 8px;
-    background: #36b37f;
+    background: hsl(155, 54%, 33%);
     border-radius: 4px;
     font-family: 'Inter', sans-serif;
     font-style: normal;
@@ -296,7 +296,7 @@
   .get_my_resume_button {
     height: 48px;
     bottom: 8px;
-    background: #36b37f;
+    background: hsl(155, 54%, 33%);
     border-radius: 4px;
     font-family: 'Inter', sans-serif;
     font-style: normal;
@@ -373,7 +373,7 @@
     font-size: 12px;
     line-height: 16px;
     letter-spacing: 0.03em;
-    color: #36b37e;
+    color: hsl(155, 54%, 33%);
   }
 
   button:enabled {
