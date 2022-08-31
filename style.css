@@ -252,7 +252,7 @@
     width: 122px;
     height: 48px;
     bottom: 8px;
-    background: hsl(155, 54%, 33%);
+    background: hsl(155, 54%, 33.7%);
     border-radius: 4px;
     font-family: 'Inter', sans-serif;
     font-style: normal;
@@ -373,7 +373,7 @@
     font-size: 12px;
     line-height: 16px;
     letter-spacing: 0.03em;
-    color: hsl(155, 54%, 33%);
+    color: hsl(155, 54%, 33.7%);
   }
 
   button:enabled {
