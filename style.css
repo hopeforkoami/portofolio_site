@@ -252,14 +252,14 @@
     width: 122px;
     height: 48px;
     bottom: 8px;
-    background: hsl(155, 54%, 33.7%);
+    background: hsl(155, 54%, 33%);
     border-radius: 4px;
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 17px;
     line-height: 24px;
-    color: #fff;
+    color: hsl(0, 0%, 100%);
     padding: 12px;
   }
 
@@ -731,14 +731,14 @@
     width: 122px;
     height: 48px;
     bottom: 8px;
-    background: #36b37f;
+    background: hsl(155, 54%, 33%);
     border-radius: 4px;
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 17px;
     line-height: 24px;
-    color: #fff;
+    color: hsl(0, 0%, 100%);
     padding: 12px;
   }
 
