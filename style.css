@@ -22,6 +22,11 @@
     justify-content: space-between;
   }
 
+  .close-menu{
+    display: none;
+  }
+ 
+
   .navbar_menu {
     width: 100%;
     align-items: center;
@@ -553,6 +558,39 @@
   .navbar_menu_content {
     display: none;
   }
+  
+.visible {
+  display: flex;
+  height: 100vh;
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  z-index: 10;
+  background: #FFFFFF;
+  mix-blend-mode: normal;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0px 48px 48px rgba(37, 47, 137, 0.08);
+  transition: top 1s ease;
+  list-style: none;
+}
+
+  .visible, .close-menu{
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .navbar_menu_button{
+    display: block;
+  }
+
+  .close-menu{
+    display: none;
+  }
+  
 
   .main_section {
     font-weight: var(--fw-700);
