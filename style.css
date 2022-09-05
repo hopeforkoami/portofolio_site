@@ -6,13 +6,14 @@
     flex-direction: column;
     background: #fff;
     width: 100%;
-    height: 100vh;
     background-position: 0 2.8rem;
+    margin: 0;
   }
 
   .header_first_section {
-    background-size: 107% 118%;
+    background-size: cover;
     background-image: url(assets/main_section_background_image.svg);
+    height: 100vh;
   }
 
   .navbar {
@@ -30,6 +31,8 @@
   .navbar_menu {
     width: 100%;
     align-items: center;
+    display: flex;
+    justify-content: center;
   }
 
   .navbar_welcome {
@@ -56,6 +59,7 @@
     width: 45%;
     margin-left: auto;
     margin-right: auto;
+    justify-content: center;
   }
 
   .main_section {
@@ -84,7 +88,7 @@
     font-size: 40px;
     line-height: 35px;
     text-align: center;
-    color: #36b37e;
+    color: #26805a;
     flex: none;
     order: 0;
     flex-grow: 0;
@@ -253,15 +257,16 @@
     width: 122px;
     height: 48px;
     bottom: 8px;
-    background: #26805a;
+    background: hsl(155, 54%, 33%);
     border-radius: 4px;
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 17px;
     line-height: 24px;
-    color: #fff;
+    color: hsl(0, 0%, 100%);
     padding: 12px;
+
   }
 
   .about_me_section {
@@ -297,7 +302,7 @@
   .get_my_resume_button {
     height: 48px;
     bottom: 8px;
-    background: #26805a;
+    background: hsl(155, 54%, 33%);
     border-radius: 4px;
     font-family: 'Inter', sans-serif;
     font-style: normal;
@@ -308,6 +313,7 @@
     padding: 12px;
     margin-left: auto;
     margin-right: auto;
+
   }
 
   .other_items_section {
@@ -374,7 +380,7 @@
     font-size: 12px;
     line-height: 16px;
     letter-spacing: 0.03em;
-    color: #36b37e;
+    color: hsl(155, 54%, 33.7%);
   }
 
   button:enabled {
@@ -765,14 +771,14 @@
     width: 122px;
     height: 48px;
     bottom: 8px;
-    background: #36b37f;
+    background: hsl(155, 54%, 33%);
     border-radius: 4px;
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 17px;
     line-height: 24px;
-    color: #fff;
+    color: hsl(0, 0%, 100%);
     padding: 12px;
   }
 
