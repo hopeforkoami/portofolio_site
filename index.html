@@ -20,25 +20,41 @@
     <div class="header_first_section">
         <header>
         <div class="toolbar">
-          <nav class="navbar">
+          <!--<nav class="navbar">
             <a class="navbar_welcome" href="index.html">Welcome</a>
             <div class="navbar_menu">
               <div class="navbar_menu_button">
                 <img src="assets/menu_icon.svg" alt="menu_icon">
               </div>
               <ul class="navbar_menu_content">
+                  <li class="close-menu visible"> <i class="fa-solid fa-xmark"></i></li>
                   <li class="navbar_menu_content_element">Portofolio</li>
                   <li class="navbar_menu_content_element">About me</li>
                   <li class="navbar_menu_content_element">Contact</li>
               </ul>
-              <div class="close-menu"><i class="fa-solid fa-xmark"></i></div>
             </div>
+
+          </nav>-->
+          <nav class="navbar">
+            <a class="navbar_welcome" href="index.html">Welcome</a>
+            <div class="navbar_menu">
+              <div class="navbar_menu_button">
+                <img src="assets/menu_icon.svg" alt="menu_icon">
+              </div>
+            </div>
+            <ul class="navbar_menu_content visible_nav_menu hidden">
+                  <li class="close_menu_button"> <i class="fa-solid fa-xmark close_button"></i></li>
+                  <a href="#hello"><li class="navbar_menu_content_element">Hello</li></a>
+                  <a href="#my_work"><li class="navbar_menu_content_element">Portofolio</li></a>
+                  <a href="#about_me"><li class="navbar_menu_content_element">About me</li></a>
+                  <a href="#contact_me"><li class="navbar_menu_content_element">Contact</li></a>
+              </ul>
 
           </nav>
 
         </div>
       </header>
-      <section class="main_section">
+      <section id="hello" class="main_section">
         <h1 class="main_section_h1">Hey there. I'm Koami.</h1>
         <h2 class="main_section_h2">I'm a software developer</h2>
         <p class="main_section_p">
@@ -89,7 +105,7 @@
 
       </section>
     </div>
-    <section  class="work_section">
+    <section id="my_work"  class="work_section">
       <h1 class="work_section_title">My Recent <br class="title_line"> Works</h1>
       <div class="delimiter">
       </div>
@@ -188,7 +204,7 @@
         </div>
       </div>
     </section>
-    <section class="about_me_section">
+    <section id="about_me" class="about_me_section">
       <h2 class="about_me_title">About me</h2>
       <div class="about_me_paragraphe">
         I can help you build a product feature or website Look through some of my
@@ -232,7 +248,7 @@
         </ul>
       </li>
     </ul>
-    <footer class="portofolio_footer">
+    <footer id="contact_me" class="portofolio_footer">
       <div class="contact_me_section"> 
         <div class="completed_form">
           <h1 class="contact_form_title">
@@ -282,6 +298,26 @@
     </footer>
 
   </div>
+  <script>
+    const menuItem = document.querySelector('.navbar_menu_content');
+    const closeMenu = document.querySelector('.close_button');
+    const openMenu = document.querySelector('.navbar_menu');
+    const menu = document.querySelector('.navbar_menu_content');
+    
+
+    function show() {
+      menuItem.classList.toggle("visible_nav_menu" );
+      menuItem.classList.remove("hidden");
+    }
+
+    function close() {
+      menuItem.classList.remove("visible_nav_menu" );
+      menuItem.classList.toggle("hidden");
+    }
+    openMenu.addEventListener('click', show);
+    closeMenu.addEventListener('click', close);
+    menu.addEventListener('click', close);
+  </script>
 </body>
 
 </html>
