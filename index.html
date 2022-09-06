@@ -6,7 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <title>Portofolio</title>
+  <script src="https://kit.fontawesome.com/1bc3a7e061.js" crossorigin="anonymous"></script>
+  <title>My Portofolio</title>
+  <meta name="title" property="og:title" content="My Portfolio">
+  <meta property="og:type" content="Article">
+  <meta name="image" property="og:image" content="assets/my_avatar.png">
+  <meta name="description" property="og:description" content="Hi I'm a developer and here is my portfolio This is my working portfolio. Inside you will find my  contact information, and my differents works.">
+  <meta name="author" content="Koami NOGBEDJI">
 </head>
 
 <body>
@@ -14,24 +20,40 @@
     <div class="header_first_section">
         <header>
         <div class="toolbar">
-          <nav class="navbar">
+          <nav class="navbar desktop_nav_bar">
             <a class="navbar_welcome" href="index.html">Welcome</a>
             <div class="navbar_menu">
               <div class="navbar_menu_button">
                 <img src="assets/menu_icon.svg" alt="menu_icon">
               </div>
               <ul class="navbar_menu_content">
-                  <li class="navbar_menu_content_element">Portofolio</li>
-                  <li class="navbar_menu_content_element">About me</li>
-                  <li class="navbar_menu_content_element">Contact</li>
+                <a href="#my_work"><li class="navbar_menu_content_element">Portofolio</li></a>
+                <a href="#about_me"><li class="navbar_menu_content_element">About</li></a>
+                <a href="#contact_me"><li class="navbar_menu_content_element">Contact</li></a>
               </ul>
             </div>
 
           </nav>
 
+          <nav class="navbar mobile_nav_bar">
+            <a class="navbar_welcome" href="index.html">Welcome</a>
+            <div class="navbar_menu mobile_navbar_menu">
+              <div class="navbar_menu_button">
+                <img src="assets/menu_icon.svg" alt="menu_icon">
+              </div>
+            </div>
+            <ul class="navbar_menu_content mobile_navbar_menu_content visible_nav_menu hidden">
+                  <li class="close_menu_button"> <i class="fa-solid fa-xmark close_button mobile_close_button"></i></li>
+                  <a href="#my_work"><li class="navbar_menu_content_element">Portofolio</li></a>
+                  <a href="#about_me"><li class="navbar_menu_content_element">About</li></a>
+                  <a href="#contact_me"><li class="navbar_menu_content_element">Contact</li></a>
+              </ul>
+
+          </nav>
+
         </div>
       </header>
-      <section class="main_section">
+      <section id="hello" class="main_section">
         <h1 class="main_section_h1">Hey there. I'm Koami.</h1>
         <h2 class="main_section_h2">I'm a software developer</h2>
         <p class="main_section_p">
@@ -69,7 +91,7 @@
           </li>
         </ul>
         <div class="next_page_icon">
-          <a href=".work_section">
+          <a href="#" aria-label="next-page">
             <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect x="1" y="1" width="40" height="40" rx="20" fill="white"></rect>
               <path fill-rule="evenodd" clip-rule="evenodd"
@@ -82,20 +104,15 @@
 
       </section>
     </div>
-    
-    <section class="work_section">
-
+    <section id="my_work"  class="work_section">
       <h1 class="work_section_title">My Recent <br class="title_line"> Works</h1>
       <div class="delimiter">
-
       </div>
       <div class="work_section_content">
         <div class="work_element">
          <!--<img class="work_image" src="assets/default_work_image.svg" alt="work image" /> --> 
           <div class="work_image">
-            
           </div>
-
           <div class="work_details">
             <h3 class="work_title">
               Multi-Post Stories <br> Gain+Glory
@@ -106,24 +123,7 @@
               <li class="work_language_item">JavaScript</li>
               <li class="work_language_item">html</li>
             </ul>
-            <button class="work_more_detail_button"> See Project</button>
-          </div>
-        </div>
-        <div class="work_element">
-          <img class="work_image" src="assets/default_work_image.svg" alt="work image" />
-
-
-          <div class="work_details">
-            <h3 class="work_title">
-              Multi-Post Stories <br> Gain+Glory
-            </h3>
-            <ul class="work_languages">
-              <li class="work_language_item">Ruby on rail</li>
-              <li class="work_language_item">css</li>
-              <li class="work_language_item">JavaScript</li>
-              <li class="work_language_item">html</li>
-            </ul>
-            <button class="work_more_detail_button"> See Project</button>
+            <button type="button" class="work_more_detail_button"> See Project</button>
           </div>
         </div>
         <div class="work_element">
@@ -138,7 +138,7 @@
               <li class="work_language_item">JavaScript</li>
               <li class="work_language_item">html</li>
             </ul>
-            <button class="work_more_detail_button"> See Project</button>
+            <button type="button" class="work_more_detail_button"> See Project</button>
           </div>
         </div>
         <div class="work_element">
@@ -153,7 +153,7 @@
               <li class="work_language_item">JavaScript</li>
               <li class="work_language_item">html</li>
             </ul>
-            <button class="work_more_detail_button"> See Project</button>
+            <button type="button" class="work_more_detail_button"> See Project</button>
           </div>
         </div>
         <div class="work_element">
@@ -168,7 +168,7 @@
               <li class="work_language_item">JavaScript</li>
               <li class="work_language_item">html</li>
             </ul>
-            <button class="work_more_detail_button"> See Project</button>
+            <button type="button" class="work_more_detail_button"> See Project</button>
           </div>
         </div>
         <div class="work_element">
@@ -183,14 +183,27 @@
               <li class="work_language_item">JavaScript</li>
               <li class="work_language_item">html</li>
             </ul>
-            <button class="work_more_detail_button"> See Project</button>
+            <button type="button" class="work_more_detail_button"> See Project</button>
           </div>
         </div>
-
+        <div class="work_element">
+          <img class="work_image" src="assets/default_work_image.svg" alt="work image" />
+          <div class="work_details">
+            <h3 class="work_title">
+              Multi-Post Stories <br> Gain+Glory
+            </h3>
+            <ul class="work_languages">
+              <li class="work_language_item">Ruby on rail</li>
+              <li class="work_language_item">css</li>
+              <li class="work_language_item">JavaScript</li>
+              <li class="work_language_item">html</li>
+            </ul>
+            <button type="button" class="work_more_detail_button"> See Project</button>
+          </div>
+        </div>
       </div>
-
     </section>
-    <section class="about_me_section">
+    <section id="about_me" class="about_me_section">
       <h2 class="about_me_title">About me</h2>
       <div class="about_me_paragraphe">
         I can help you build a product feature or website Look through some of my
@@ -234,16 +247,16 @@
         </ul>
       </li>
     </ul>
-    <footer class="portofolio_footer">
+    <footer id="contact_me" class="portofolio_footer">
       <div class="contact_me_section"> 
         <div class="completed_form">
           <h1 class="contact_form_title">
           I'm always interested in hearing about new projects, so if you'd like to chat please get in touch.
           </h1>
           <form class="contact_form" action="https://formspree.io/f/mknegjnj" method="POST">
-            <input type="text" name="clientName" class="form_input" placeholder="Full Name" maxlength="30" required>
-            <input type="email" class="form_input" name="clientEmail" placeholder="Email address" required>
-            <textarea id="contact_text_area" class="form_input" name="clientMessage" placeholder="write your message here" maxlength="500"
+            <input type="text" name="clientName" class="form_input" placeholder="Full Name" maxlength="30" aria-label="name" required>
+            <input type="email" class="form_input" name="clientEmail" placeholder="Email address"  aria-label="email"  required>
+            <textarea id="contact_text_area" class="form_input" name="clientMessage" placeholder="write your message here" maxlength="500"  aria-label="message" 
               required></textarea>
             <button class="submit_button" type="submit">Get in touch</button>
           </form>
@@ -284,6 +297,7 @@
     </footer>
 
   </div>
+  <script src="js/portofolio.js"> </script>
 </body>
 
 </html>
