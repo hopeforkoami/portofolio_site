@@ -566,8 +566,8 @@
     list-style-type: none;
   }
 
-  .navbar_menu_content_element{
-    padding: .75rem 1rem;
+  .navbar_menu_content_element {
+    padding: 0.75rem 1rem;
     text-decoration: none;
     transition-duration: 0.3s;
     font-family: 'Inter', sans-serif;
@@ -592,8 +592,7 @@
   .visible_nav_menu {
     background-color: #fff;
     bottom: 0;
-    box-shadow: 0 48px 48px rgba(37,47,137,0.08);
-    display: none;
+    box-shadow: 0 48px 48px #252f8914;
     height: 100vh;
     left: 0;
     margin: 0;
