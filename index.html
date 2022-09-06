@@ -20,21 +20,6 @@
     <div class="header_first_section">
         <header>
         <div class="toolbar">
-          <!--<nav class="navbar">
-            <a class="navbar_welcome" href="index.html">Welcome</a>
-            <div class="navbar_menu">
-              <div class="navbar_menu_button">
-                <img src="assets/menu_icon.svg" alt="menu_icon">
-              </div>
-              <ul class="navbar_menu_content">
-                  <li class="close-menu visible"> <i class="fa-solid fa-xmark"></i></li>
-                  <li class="navbar_menu_content_element">Portofolio</li>
-                  <li class="navbar_menu_content_element">About me</li>
-                  <li class="navbar_menu_content_element">Contact</li>
-              </ul>
-            </div>
-
-          </nav>-->
           <nav class="navbar">
             <a class="navbar_welcome" href="index.html">Welcome</a>
             <div class="navbar_menu">
@@ -298,26 +283,7 @@
     </footer>
 
   </div>
-  <script>
-    const menuItem = document.querySelector('.navbar_menu_content');
-    const closeMenu = document.querySelector('.close_button');
-    const openMenu = document.querySelector('.navbar_menu');
-    const menu = document.querySelector('.navbar_menu_content');
-    
-
-    function show() {
-      menuItem.classList.toggle("visible_nav_menu" );
-      menuItem.classList.remove("hidden");
-    }
-
-    function close() {
-      menuItem.classList.remove("visible_nav_menu" );
-      menuItem.classList.toggle("hidden");
-    }
-    openMenu.addEventListener('click', show);
-    closeMenu.addEventListener('click', close);
-    menu.addEventListener('click', close);
-  </script>
+  <script src="js/portofolio.js"> </script>
 </body>
 
 </html>
