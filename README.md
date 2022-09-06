@@ -2,7 +2,7 @@
 
 # Portofolio Site
 
-> this is the mobile version of my portofolio site 
+> this is my portofolio. Inside you will find my background information, and my recent projects. you can get in touch with me throught the contact form 
 
 
 ## Built With
@@ -52,6 +52,19 @@ To get a local copy up and running follow these simple example steps.
 - GitHub: [@hopeforkoami](https://github.com/hopeforkoami)
 - Twitter: [@KNogbedji](https://twitter.com/KNogbedji)
 - LinkedIn: [koami-nogbedji-a155b7233](https://linkedin.com/in/koami-nogbedji-a155b7233)
+
+👤 **PedroH-Neves** 
+
+- GitHub: [@PedroH-Neves](https://github.com/PedroH-Neves)
+
+👤 **azizunnabi** 
+
+- GitHub: [@azizunnabi](https://github.com/azizunnabi)
+
+👤 **Miliyon Ayalew**
+
+- GitHub: [@Miliyonayalew](https://github.com/Miliyonayalew)
+
 
 ## 🤝 Contributing
 

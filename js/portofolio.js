@@ -1,7 +1,7 @@
-const menuItem = document.querySelector('.navbar_menu_content');
-const closeMenu = document.querySelector('.close_button');
-const openMenu = document.querySelector('.navbar_menu');
-const menu = document.querySelector('.navbar_menu_content');
+const menuItem = document.querySelector('.mobile_navbar_menu_content');
+const closeMenu = document.querySelector('.mobile_close_button');
+const openMenu = document.querySelector('.mobile_navbar_menu');
+const menu = document.querySelector('.mobile_navbar_menu_content');
 
 function show() {
   menuItem.classList.toggle('visible_nav_menu');

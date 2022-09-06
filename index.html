@@ -20,18 +20,32 @@
     <div class="header_first_section">
         <header>
         <div class="toolbar">
-          <nav class="navbar">
+          <nav class="navbar desktop_nav_bar">
             <a class="navbar_welcome" href="index.html">Welcome</a>
             <div class="navbar_menu">
               <div class="navbar_menu_button">
                 <img src="assets/menu_icon.svg" alt="menu_icon">
               </div>
+              <ul class="navbar_menu_content">
+                <a href="#my_work"><li class="navbar_menu_content_element">Portofolio</li></a>
+                <a href="#about_me"><li class="navbar_menu_content_element">About</li></a>
+                <a href="#contact_me"><li class="navbar_menu_content_element">Contact</li></a>
+              </ul>
             </div>
-            <ul class="navbar_menu_content visible_nav_menu hidden">
-                  <li class="close_menu_button"> <i class="fa-solid fa-xmark close_button"></i></li>
-                  <a href="#hello"><li class="navbar_menu_content_element">Hello</li></a>
+
+          </nav>
+
+          <nav class="navbar mobile_nav_bar">
+            <a class="navbar_welcome" href="index.html">Welcome</a>
+            <div class="navbar_menu mobile_navbar_menu">
+              <div class="navbar_menu_button">
+                <img src="assets/menu_icon.svg" alt="menu_icon">
+              </div>
+            </div>
+            <ul class="navbar_menu_content mobile_navbar_menu_content visible_nav_menu hidden">
+                  <li class="close_menu_button"> <i class="fa-solid fa-xmark close_button mobile_close_button"></i></li>
                   <a href="#my_work"><li class="navbar_menu_content_element">Portofolio</li></a>
-                  <a href="#about_me"><li class="navbar_menu_content_element">About me</li></a>
+                  <a href="#about_me"><li class="navbar_menu_content_element">About</li></a>
                   <a href="#contact_me"><li class="navbar_menu_content_element">Contact</li></a>
               </ul>
 
