@@ -16,61 +16,36 @@
 </head>
 
 <body>
-   <!--Modal-->
-   <section class="modal">
-    <div class="card-work">
-        <div class="modal-header">
-            <img class="project-image" src="Assests/ProjectImages/Project1.png" alt="Project-Image">
-            <i class="fa-solid fa-xmark close"></i>
-        </div>
-        <div class="modal-primaryText">
-            <div class="modal-title">
-                <title>
-                    Keeping track of hundreds of
-                    components
-                </title>
-            </div>
-            <div class="modal-tags-container">
-                <ul class="modal-tags">
-                    <li class="modal-tag">Ruby on rail</li>
-                    <li class="modal-tag">Css</li>
-                    <li class="modal-tag">Javascript</li>
-                </ul>
-            </div>
-        </div>
-        <div class="modal-discription">
-            <p class="modal-discription-text">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                when an unknown printer took a galley of type and scrambled it 1960s with the 
-                releaLorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                when an unknown printer took a galley of type and scrambled it 1960s with the relea
-            </p>    
-        </div>
-        <div class="modal-action">
-            <button class="see-live">See Live <span><i class="fa-solid fa-up-right-from-square"></i></span></button>
-            <button class="see-source">See Source <span><i class="fa-brands fa-github"></i></span></button>
-        </div>
-    </div>
-</section>
- <!--Modal-->
   <div class="container">
     <div class="header_first_section">
         <header>
         <div class="toolbar">
-          <nav class="navbar">
+          <nav class="navbar desktop_nav_bar">
             <a class="navbar_welcome" href="index.html">Welcome</a>
             <div class="navbar_menu">
               <div class="navbar_menu_button">
                 <img src="assets/menu_icon.svg" alt="menu_icon">
               </div>
+              <ul class="navbar_menu_content">
+                <a href="#my_work"><li class="navbar_menu_content_element">Portofolio</li></a>
+                <a href="#about_me"><li class="navbar_menu_content_element">About</li></a>
+                <a href="#contact_me"><li class="navbar_menu_content_element">Contact</li></a>
+              </ul>
             </div>
-            <ul class="navbar_menu_content visible_nav_menu hidden">
-                  <li class="close_menu_button"> <i class="fa-solid fa-xmark close_button"></i></li>
-                  <a href="#hello"><li class="navbar_menu_content_element">Hello</li></a>
+
+          </nav>
+
+          <nav class="navbar mobile_nav_bar">
+            <a class="navbar_welcome" href="index.html">Welcome</a>
+            <div class="navbar_menu mobile_navbar_menu">
+              <div class="navbar_menu_button">
+                <img src="assets/menu_icon.svg" alt="menu_icon">
+              </div>
+            </div>
+            <ul class="navbar_menu_content mobile_navbar_menu_content visible_nav_menu hidden">
+                  <li class="close_menu_button"> <i class="fa-solid fa-xmark close_button mobile_close_button"></i></li>
                   <a href="#my_work"><li class="navbar_menu_content_element">Portofolio</li></a>
-                  <a href="#about_me"><li class="navbar_menu_content_element">About me</li></a>
+                  <a href="#about_me"><li class="navbar_menu_content_element">About</li></a>
                   <a href="#contact_me"><li class="navbar_menu_content_element">Contact</li></a>
               </ul>
 
@@ -128,28 +103,6 @@
         </div>
 
       </section>
-      <section class="details">
-      <img id="details-img" src="./pics/Snapshoot-Portfolio.svg" alt="project image">
-      <hgroup id="details-hgroup">
-        <h2 id="details-title">
-          Keeping track of hundreds of components
-        </h2>
-        <ul class="courses" id="details-courses">
-              <li>Ruby on Rails</li>
-              <li>CSS</li>
-              <li>JavaScript</li>
-            </ul>
-      </hgroup>
-      <p id="details-text">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s with the releaLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s with the relea
-      </p>
-      <div class="details-buttons">
-        <button type="submit">See Live <img src="./pics/Icon-Export.svg" alt="export icon">
-        </button>
-        <button type="submit">See Source <img src="./pics/Icon-GitHub.svg" alt="github image">
-        </button>
-      </div>
-    </section>
     </div>
     <section id="my_work"  class="work_section">
       <h1 class="work_section_title">My Recent <br class="title_line"> Works</h1>

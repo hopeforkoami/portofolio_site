@@ -520,6 +520,14 @@
   .submit_button:active {
     background-color: #008552;
   }
+
+  .close_menu_button {
+    display: none;
+  }
+
+  .mobile_nav_bar {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
@@ -580,9 +588,15 @@
     color: #3a4a42;
   }
 
+  .desktop_nav_bar {
+    display: none;
+  }
+
   .close_menu_button {
     width: auto;
     margin-left: auto;
+    color: #67798e;
+    margin-bottom: 1em;
   }
 
   .close_button {
@@ -596,7 +610,8 @@
     height: 100vh;
     left: 0;
     margin: 0;
-    padding: 3rem;
+    padding-left: 5%;
+    padding-right: 5%;
     position: absolute;
     right: 0;
     top: 0;
@@ -1051,52 +1066,4 @@ a:hover {
 
 a:active {
   text-decoration: none;
-}
-
-.details {
-  width: 95%;
-  height: auto;
-  margin: 0 auto;
-  padding: 1rem 1.5rem;
-  background: #eff1fe;
-  border-radius: .5rem;
-}
-
-#details-img {
-  margin: 0 auto 1rem auto;
-  padding: 0;
-}
-
-#details-text {
-  text-align: center;
-  font-size: 1rem;
-  font-family: 'Times New Roman', Times, serif;
-  margin: 1rem;
-  line-height: 1.5rem;
-}
-
-#details-hgroup {
-  width: 100%;
-}
-
-#details-title {
-  font-size: 2rem;
-  line-height: 2.8rem;
-  color: #172b4d;
-  margin-bottom: .7rem;
-}
-
-.details .courses {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-.details-buttons {
-  width: 100%;
-  margin: 1rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
 }
