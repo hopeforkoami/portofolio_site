@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="mobile_popup_style.css">
   <script src="https://kit.fontawesome.com/1bc3a7e061.js" crossorigin="anonymous"></script>
   <title>My Portofolio</title>
   <meta name="title" property="og:title" content="My Portfolio">
@@ -15,6 +16,7 @@
 </head>
 
 <body>
+  
   <div class="container">
     <div class="header_first_section">
         <header>
@@ -108,24 +110,52 @@
       <div class="delimiter">
       </div>
       <div class="popup_work_details">
-        <div class="pop_image">
-        </div>
-        <div class="popup_details">
-          <h3 class="popup_title">
-            Multi-Post Stories <br> Gain+Glory
-          </h3>
-          <ul class="pop_languages">
-            <li class="work_language_item">Ruby on rail</li>
-            <li class="work_language_item">css</li>
-            <li class="work_language_item">JavaScript</li>
-            <li class="work_language_item">html</li>
-          </ul>
-          <div class="popup_description">
-            
-          </div>
-          <button type="button" class="work_more_detail_button"> See Project</button>
-        </div>
-      </div>
+        <!--modal start-->
+        <div class="modal_popup">
+         <div class="modal_container">
+           <div class="modal_close_button">
+             <i class="fa-solid fa-xmark "></i>
+           </div>
+         <div class="modal_image">
+     
+         </div>
+         <div class="desktop_title">
+           <h2 class="modal_title">
+           Keeping track of hundreds of components
+         </h2>
+         <div class="buttons for_desktop">
+           <button class="left_button modal_button">See live <img src="assets/see_live_icon.svg" alt="see live icon"> </button>
+           <button class="left_button modal_button">See Source <img src="assets/github_icon.svg" alt="github icon"> </button>
+         </div>
+         </div>
+         
+         <ul class="modal_popup_technologies">
+           <li class="technologie_items">Ruby on rails</li>
+           <li class="technologie_items">Css</li>
+           <li class="technologie_items">JavaScript</li>
+         </ul>
+         <p class="popup_description">
+           Lorem Ipsum is simply dummy text of the printing
+            and typesetting industry. Lorem Ipsum has been the 
+            industry's standard dummy text ever since the 1500s,
+             when an unknown printer took a galley of type and 
+             scrambled it 1960s with the releaLorem Ipsum is 
+             simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's st
+              andard dummy text ever since the 1500s, when an u
+              nknown printer took a galley of type and scrambled
+               it 1960s with the relea
+         </p>
+         <div class="buttons for_mobile">
+           <button class="left_button modal_button">See live <img src="assets/see_live_icon.svg" alt="see live icon"> </button>
+           <button class="left_button modal_button">See Source <img src="assets/github_icon.svg" alt="github icon"> </button>
+         </div>
+     
+       </div>
+       </div>
+        <!--modal end-->
+       </div>
+      
       <div class="work_section_content">
         <div class="work_element">
          <!--<img class="work_image" src="assets/default_work_image.svg" alt="work image" /> --> 
