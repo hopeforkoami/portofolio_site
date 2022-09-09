@@ -7,7 +7,9 @@ function validate(e){
   if(emailvalue.match(reg)){
     return true;
   }
-  
+  error.style.display= 'block';
+  error.innerHTML = 'email should only contain low-case caracters';
+  email.style.border='2px solid red';
   e.preventDefault();
   return false;
 }
