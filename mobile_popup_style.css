@@ -1,5 +1,5 @@
 .modal_popup {
-  background: #000000cc;
+  background: #000c;
   padding-left: 4%;
   padding-right: 4%;
   padding-top: 5%;
@@ -9,7 +9,7 @@
 .modal_container {
   display: flex;
   flex-direction: column;
-  background:#fff;
+  background: #fff;
   border-radius: 16px;
   padding-left: 2%;
   padding-right: 2%;
@@ -30,14 +30,13 @@
   font-weight: 600;
   font-size: 32px;
   line-height: 44px;
-  color: #172B4D;
+  color: #172b4d;
   width: 80%;
 }
 
 .modal_popup_technologies {
   display: flex;
   list-style: none;
-  display: flex;
   justify-content: left;
   align-items: center;
   width: 100%;
@@ -63,7 +62,7 @@
 }
 
 .popup_description {
-  font-family: 'Inter';
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -80,7 +79,8 @@
 .modal_button {
   bottom: 8px;
   background: #36b37f;
-  /*background: hsl(155, 54%, 33%);*/
+
+  /* background: hsl(155, 54%, 33%); */
   border-radius: 4px;
   font-family: 'Inter', sans-serif;
   font-style: normal;
@@ -96,7 +96,6 @@
   justify-content: center;
   display: flex;
   gap: 10px;
-
 }
 
 .visible_modal {
@@ -106,7 +105,6 @@
 .hidden_modal {
   display: none;
 }
-
 
 .modal_close_button {
   background: #ebecf0;
@@ -119,7 +117,6 @@
   margin-bottom: 1em;
   color: #67798e;
   border-radius: 8px;
-
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
@@ -134,11 +131,9 @@
   .desktop_pages_navigator {
     display: none;
   }
-
 }
 
 @media screen and (min-width: 768px) {
-  
   .modal_popup {
     display: flex;
     justify-content: center;
@@ -147,7 +142,6 @@
 
   .modal_container {
     width: 80%;
-    
   }
 
   .for_mobile {
@@ -178,7 +172,7 @@
     justify-content: left;
     align-items: flex-start;
   }
-  
+
   .desktop_pages_navigator {
     display: flex;
   }
@@ -198,6 +192,7 @@
     background-color: #fff;
     border-radius: 8px;
   }
+
   .right_or_left_button:hover {
     display: flex;
     align-items: center;
@@ -205,8 +200,8 @@
     font-size: 1.5em;
     border: none;
     background-color: #36b37f;
-    
   }
+
   .next_or_preview:hover {
     color: #fff;
     font-size: 1.5em;
