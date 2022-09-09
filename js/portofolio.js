@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 let dataSource = [
   {
     card_title:"Multi-Post Stories <br> Gain+Glory",
@@ -93,15 +94,20 @@ let dataSource = [
 ];
 =======
 >>>>>>> dfe9b2fb0d36cdb3c4e37a1e110d49e2c945e98e
+=======
+>>>>>>> dfe9b2fb0d36cdb3c4e37a1e110d49e2c945e98e
 const menuItem = document.querySelector('.mobile_navbar_menu_content');
 const closeMenu = document.querySelector('.mobile_close_button');
 const openMenu = document.querySelector('.mobile_navbar_menu');
 const menu = document.querySelector('.mobile_navbar_menu_content');
 <<<<<<< HEAD
+<<<<<<< HEAD
 const modal= document.querySelector('.popup_work_details');
 const popup_close_button= document.querySelector('.modal_close_button');
 const modal_image_close_button= document.querySelector('.modal_image');
 const work_content_html= document.querySelector('.work_section_content');
+=======
+>>>>>>> dfe9b2fb0d36cdb3c4e37a1e110d49e2c945e98e
 =======
 >>>>>>> dfe9b2fb0d36cdb3c4e37a1e110d49e2c945e98e
 
