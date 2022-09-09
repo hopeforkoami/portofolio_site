@@ -1084,3 +1084,10 @@ a:active {
   overflow-y: auto;
   display: none;
 }
+
+.error_message {
+  display: none;
+  color: red;
+  font-size: 0.9rem;
+  font-family: inherit;
+}
