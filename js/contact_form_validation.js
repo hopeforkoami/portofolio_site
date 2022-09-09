@@ -5,7 +5,7 @@ const reg = /^[a-z0-9]+@[a-z0-9-]+\.[a-z0-9-.]+$/;
 function validate(e) {
   const emailvalue = email.value;
   if (emailvalue.match(reg)) {
-    error.style.display='none';
+    error.style.display = 'none';
     email.style.border = '1px solid #d0d9d4';
     return true;
   }
