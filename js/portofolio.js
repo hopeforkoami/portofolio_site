@@ -178,7 +178,7 @@ function buildworkelement(index) {
     reponse += `<li class="work_language_item">${element}</li>`;
   });
   reponse += `${'</ul>'
-  + '<button type="button" class="work_more_detail_button" onclick="show_popup('}${index})"> See Project</button>`
+  + '<button type="button" class="work_more_detail_button" onclick="showpopup('}${index})"> See Project</button>`
     + '</div>'
   + '</div>';
   return reponse;
