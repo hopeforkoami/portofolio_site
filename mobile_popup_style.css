@@ -138,10 +138,14 @@
     display: flex;
     justify-content: center;
     justify-items: center;
+    height: 1000px;
+    overflow-y: auto;
   }
 
   .modal_container {
-    width: 80%;
+    width: 74%;
+    height: 1091px;
+    overflow: auto;
   }
 
   .for_mobile {
@@ -149,7 +153,7 @@
   }
 
   .modal_image {
-    height: 618px;
+    height: 66%;
     background-image: url("assets/desktop_project_description.svg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -169,7 +173,7 @@
   .buttons {
     gap: 1em;
     width: 40%;
-    justify-content: left;
+    justify-content: right;
     align-items: flex-start;
   }
 

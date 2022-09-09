@@ -64,7 +64,7 @@
   .main_section {
     font-weight: var(--fw-700);
     text-align: center;
-    margin-top: 0;
+    margin-top: 6em;
   }
 
   .main_section_h1 {
@@ -1038,18 +1038,26 @@
 
 button {
   transition: all 0.5s ease-out;
+  border: 0;
 }
 
 button:enabled {
   background-color: #36b37f;
+  border: 0;
 }
 
 button:hover {
   background-color: #36b37f;
+  border: 0;
 }
 
 button:active {
   background-color: #008552;
+  border: 0;
+}
+
+a {
+  color: #172b4d;
 }
 
 a:link {

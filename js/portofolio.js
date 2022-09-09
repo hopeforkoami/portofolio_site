@@ -136,9 +136,9 @@ function showpopup(index) {
               + '<div class="desktop_pages_navigator">';
   /* check for exist preview */
   if (index === 0) {
-    modalcontent += '<button class="right_or_left_button btn" disabled> <i class="bi bi-arrow-left next_or_preview"> </i>Preview Project</button>';
+    modalcontent += '<button class="right_or_left_button btn btn-success" disabled> <i class="bi bi-arrow-left next_or_preview"> </i>Preview Project</button>';
   } else {
-    modalcontent += `<button class="right_or_left_button btn" onclick="reload(${index - 1})"> <i class="bi bi-arrow-left next_or_preview"> </i>Preview Project</button>`;
+    modalcontent += `<button class="right_or_left_button btn btn-success" onclick="reload(${index - 1})"> <i class="bi bi-arrow-left next_or_preview"> </i>Preview Project</button>`;
   }
   /** check for  next */
   if (index === (dataSource.length - 1)) {
