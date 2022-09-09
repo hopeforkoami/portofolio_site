@@ -88,8 +88,7 @@ const dataSource = [
     card_description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s with the releaLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's st andard dummy text ever since the 1500s, when an u nknown printer took a galley of type and scrambled it 1960s with the relea",
     card_live_link: '#',
     card_source_link: '#',
-  },
-];
+  
 
 const menuItem = document.querySelector('.mobile_navbar_menu_content');
 const closeMenu = document.querySelector('.mobile_close_button');
