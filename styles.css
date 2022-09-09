@@ -196,7 +196,7 @@
   }
 
   .work_image {
-    height: 52%;
+    height: 400px;
     background-image: url("assets/default_work_image.svg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -1075,4 +1075,5 @@ a:active {
   top: 0;
   z-index: 500;
   overflow-y: auto;
+  display: none;
 }
