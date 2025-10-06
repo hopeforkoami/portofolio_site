@@ -1,265 +1,1377 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="mobile_popup_style.css">
-  <script src="https://kit.fontawesome.com/1bc3a7e061.js" crossorigin="anonymous"></script>
-  <title>My Portofolio</title>
-  <meta name="title" property="og:title" content="My Portfolio">
-  <meta property="og:type" content="Article">
-  <meta name="image" property="og:image" content="assets/my_avatar.png">
-  <meta name="description" property="og:description" content="Hi I'm a developer and here is my portfolio This is my working portfolio. Inside you will find my  contact information, and my differents works.">
-  <meta name="author" content="Koami NOGBEDJI">
-  <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KOAMI NOGBEDJI | Freelance Full-Stack Developer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/framer-motion@10.12.4/dist/framer-motion.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style id="app-style">
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+    }
+    
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease;
+    }
+    
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .timeline-dot {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #2563eb;
+      position: absolute;
+      left: -10px;
+      top: 24px;
+      z-index: 10;
+    }
+    
+    .timeline-line {
+      position: absolute;
+      width: 2px;
+      background-color: #e5e7eb;
+      left: 0;
+      top: 0;
+      bottom: 0;
+    }
+    
+    .skill-progress {
+      height: 8px;
+      border-radius: 4px;
+      background-color: #e5e7eb;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .skill-bar {
+      height: 100%;
+      background-color: #2563eb;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transition: width 1.5s ease;
+    }
+    
+    .btn-primary {
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+    }
+    
+    .project-card {
+      transition: all 0.3s ease;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    
+    .nav-link {
+      position: relative;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: #2563eb;
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    #mobile-menu {
+      transition: all 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fadeIn {
+      animation: fadeIn 0.5s ease forwards;
+    }
+
+    .typing-cursor {
+      display: inline-block;
+      width: 3px;
+      height: 24px;
+      background-color: #2563eb;
+      margin-left: 4px;
+      animation: blink 1s step-end infinite;
+    }
+
+    @keyframes blink {
+      from, to {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .language-level {
+      height: 6px;
+      background-color: #e5e7eb;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .language-progress {
+      height: 100%;
+      background-color: #2563eb;
+    }
+
+    .lang-btn {
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .lang-btn.active {
+      background-color: #2563eb;
+      color: white;
+    }
+  </style>
 </head>
 
-<body onload="buildworkcontent()">
-  
-  <div class="container">
-    <div class="header_first_section">
-        <header>
-        <div class="toolbar">
-          <nav class="navbare desktop_nav_bar">
-            <a class="navbar_welcome" href="index.html">Welcome</a>
-            <div class="navbar_menu">
-              <div class="navbar_menu_button">
-                <img src="assets/menu_icon.svg" alt="menu_icon">
-              </div>
-              <ul class="navbar_menu_content">
-                <a href="#my_work"><li class="navbar_menu_content_element">Portofolio</li></a>
-                <a href="#about_me"><li class="navbar_menu_content_element">About</li></a>
-                <a href="#contact_me"><li class="navbar_menu_content_element">Contact</li></a>
-              </ul>
-            </div>
-
-          </nav>
-
-          <nav class="navbare mobile_nav_bar">
-            <a class="navbar_welcome" href="index.html">Welcome</a>
-            <div class="navbar_menu mobile_navbar_menu">
-              <div class="navbar_menu_button">
-                <img src="assets/menu_icon.svg" alt="menu_icon">
-              </div>
-            </div>
-            <ul class="navbar_menu_content mobile_navbar_menu_content visible_nav_menu hidden">
-                  <li class="close_menu_button"> <i class="fa-solid fa-xmark close_button mobile_close_button"></i></li>
-                  <a href="#my_work"><li class="navbar_menu_content_element">Portofolio</li></a>
-                  <a href="#about_me"><li class="navbar_menu_content_element">About</li></a>
-                  <a href="#contact_me"><li class="navbar_menu_content_element">Contact</li></a>
-              </ul>
-
-          </nav>
-
+<body class="bg-gray-50">
+  <!-- Header / Navbar -->
+  <header class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-sm shadow-sm z-50">
+    <div class="container mx-auto px-4 py-4 flex flex-wrap items-center justify-between">
+      <div class="flex items-center">
+        <a href="#hero" class="text-xl md:text-2xl font-bold text-gray-800">KOAMI NOGBEDJI</a>
+        <p class="hidden md:block ml-4 text-sm text-gray-500 border-l border-gray-300 pl-4">Freelance Full-Stack Developer</p>
+      </div>
+      
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="#hero" class="nav-link text-gray-600 hover:text-blue-600 font-medium" data-lang-key="nav.home">Home</a>
+        <a href="#about" class="nav-link text-gray-600 hover:text-blue-600 font-medium" data-lang-key="nav.about">About</a>
+        <a href="#experience" class="nav-link text-gray-600 hover:text-blue-600 font-medium" data-lang-key="nav.experience">Experience</a>
+        <a href="#projects" class="nav-link text-gray-600 hover:text-blue-600 font-medium" data-lang-key="nav.projects">Projects</a>
+        <a href="#contact" class="nav-link text-gray-600 hover:text-blue-600 font-medium" data-lang-key="nav.contact">Contact</a>
+        
+        <!-- Add language switcher -->
+        <div class="language-switcher flex items-center space-x-2 border-l border-gray-200 pl-4">
+          <button id="lang-en" class="text-sm font-medium px-2 py-1 rounded lang-btn active" data-lang="en">EN</button>
+          <span class="text-gray-300">|</span>
+          <button id="lang-fr" class="text-sm font-medium px-2 py-1 rounded lang-btn" data-lang="fr">FR</button>
         </div>
-      </header>
-      <section id="hello" class="main_section">
-        <h1 class="main_section_h1">Hey there. I'm Koami.</h1>
-        <h2 class="main_section_h2">I'm a software developer</h2>
-        <p class="main_section_p">
-          professionally trained by Microverse,
-          I can help in custom software development (according to demand),
-          website development, mobile application development,
-          network maintenance and many other IT areas.
-        </p>
-        <ul class="main_section_social">
+        
+        <a href="javascript:void(0)" class="flex items-center bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-md transition duration-300 font-medium" data-lang-key="nav.cv">
+          <i class="fas fa-download mr-2"></i> CV
+        </a>
+      </nav>
+      
+      <!-- Mobile menu button -->
+      <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-blue-600 focus:outline-none">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
+    
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="md:hidden bg-white shadow-lg rounded-b-lg mx-4 overflow-hidden h-0 opacity-0">
+      <nav class="flex flex-col px-4 py-2">
+        <a href="#hero" class="py-3 text-gray-600 hover:text-blue-600 font-medium border-b border-gray-100" data-lang-key="nav.home">Home</a>
+        <a href="#about" class="py-3 text-gray-600 hover:text-blue-600 font-medium border-b border-gray-100" data-lang-key="nav.about">About</a>
+        <a href="#experience" class="py-3 text-gray-600 hover:text-blue-600 font-medium border-b border-gray-100" data-lang-key="nav.experience">Experience</a>
+        <a href="#projects" class="py-3 text-gray-600 hover:text-blue-600 font-medium border-b border-gray-100" data-lang-key="nav.projects">Projects</a>
+        <a href="#contact" class="py-3 text-gray-600 hover:text-blue-600 font-medium border-b border-gray-100" data-lang-key="nav.contact">Contact</a>
+        
+        <!-- Add mobile language switcher -->
+        <div class="py-3 flex items-center space-x-4 border-b border-gray-100">
+          <span class="text-gray-600">Language:</span>
+          <div class="flex items-center space-x-2">
+            <button class="text-sm font-medium px-2 py-1 rounded lang-btn active" data-lang="en">EN</button>
+            <span class="text-gray-300">|</span>
+            <button class="text-sm font-medium px-2 py-1 rounded lang-btn" data-lang="fr">FR</button>
+          </div>
+        </div>
+        
+        <a href="javascript:void(0)" class="flex items-center py-3 text-gray-600 hover:text-blue-600 font-medium" data-lang-key="nav.downloadCv">
+          <i class="fas fa-download mr-2"></i> Download CV
+        </a>
+      </nav>
+    </div>
+  </header>
 
-          <li>
-            <a class="social_media_icon">
-              <img src="assets/twitter.svg" alt="twitter icon " />
-            </a>
-          </li>
-          <li>
-            <a class="social_media_icon">
-              <img src="assets/Linkedin_icon.svg" alt="Linkedin icon " />
-            </a>
-          </li>
-          <li>
-            <a class="social_media_icon" id="medium_icon">
-              <img src="assets/medium.svg" alt="medium icon " />
-            </a>
-          </li>
-          <li>
-            <a class="social_media_icon">
-              <img src="assets/github.svg" alt="github icon " />
-            </a>
-          </li>
-          <li>
-            <a class="social_media_icon">
-              <img src="assets/angellist.svg" alt="angellist icon " />
-            </a>
-          </li>
-        </ul>
-        <div class="next_page_icon">
-          <a href="#" aria-label="next-page">
-            <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="1" y="1" width="40" height="40" rx="20" fill="white"></rect>
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M14.2929 17.2929C14.6834 16.9024 15.3166 16.9024 15.7071 17.2929L21 22.5858L26.2929 17.2929C26.6834 16.9024 27.3166 16.9024 27.7071 17.2929C28.0976 17.6834 28.0976 18.3166 27.7071 18.7071L21.7071 24.7071C21.3166 25.0976 20.6834 25.0976 20.2929 24.7071L14.2929 18.7071C13.9024 18.3166 13.9024 17.6834 14.2929 17.2929Z"
-                fill="#172B4D"></path>
-              <rect x="1" y="1" width="40" height="40" rx="20" stroke="#DFE1E6"></rect>
-            </svg>
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center pt-20 bg-gradient-to-br from-white to-blue-50">
+      <div class="container mx-auto px-4 py-16 md:py-20">
+        <div class="flex flex-col md:flex-row items-center justify-between">
+          <div class="w-full md:w-2/5 mb-10 md:mb-0 reveal">
+            <div class="relative w-64 h-64 md:w-80 md:h-80 mx-auto md:mx-0 rounded-full overflow-hidden border-4 border-white shadow-xl">
+              <img src="https://cdn.pixabay.com/photo/2016/11/21/12/42/beard-1845166_1280.jpg" alt="KOAMI NOGBEDJI" class="w-full h-full object-cover">
+            </div>
+          </div>
+          
+          <div class="w-full md:w-3/5 md:pl-16 reveal">
+            <p class="text-blue-600 font-medium mb-4 uppercase tracking-wider" data-lang-key="hero.hello">Hello, I'm</p>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-4">KOAMI NOGBEDJI</h1>
+            <div class="text-xl md:text-2xl font-medium text-gray-600 mb-6">
+              <span id="typing-text">Full-Stack Developer</span>
+              <span class="typing-cursor"></span>
+            </div>
+            <p class="text-gray-600 mb-8 text-lg leading-relaxed" data-lang-key="hero.specializing">
+              Specializing in Web & Mobile development with expertise in JavaScript, React, Ruby on Rails, PHP, and Flutter. I build high-performance, user-focused applications that deliver exceptional experiences.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <a href="#contact" class="btn-primary bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium shadow-lg" data-lang-key="hero.hireMe">
+                Hire Me
+              </a>
+              <a href="#projects" class="btn-primary bg-white hover:bg-gray-100 text-blue-600 px-8 py-3 rounded-lg font-medium shadow-lg border border-blue-200" data-lang-key="hero.viewProjects">
+                View Projects
+              </a>
+            </div>
+            
+            <div class="flex items-center mt-10 gap-6">
+              <a href="javascript:void(0)" class="text-gray-600 hover:text-blue-600 transition-colors" aria-label="GitHub">
+                <i class="fab fa-github text-2xl"></i>
+              </a>
+              <a href="javascript:void(0)" class="text-gray-600 hover:text-blue-600 transition-colors" aria-label="LinkedIn">
+                <i class="fab fa-linkedin text-2xl"></i>
+              </a>
+              <a href="javascript:void(0)" class="text-gray-600 hover:text-blue-600 transition-colors" aria-label="Twitter">
+                <i class="fab fa-twitter text-2xl"></i>
+              </a>
+              <a href="javascript:void(0)" class="text-gray-600 hover:text-blue-600 transition-colors" aria-label="Instagram">
+                <i class="fab fa-instagram text-2xl"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- About Me Section -->
+    <section id="about" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16 reveal">
+          <p class="text-blue-600 font-medium mb-2 uppercase tracking-wider">About Me</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Who I Am</h2>
+          <div class="w-20 h-1 bg-blue-600 mx-auto mt-4"></div>
+        </div>
+        
+        <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
+          <div class="w-full md:w-1/2 reveal">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6">Full-Stack Developer from Mango, Togo</h3>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              I'm a passionate Full-Stack Developer with a focus on creating efficient, scalable, and user-friendly applications. With over 5 years of experience in web and mobile development, I've helped businesses of all sizes transform their digital presence and operations.
+            </p>
+            <p class="text-gray-600 mb-8 leading-relaxed">
+              My journey began in Togo, where I developed a passion for coding and problem-solving. Since then, I've embraced the freelance lifestyle, collaborating with clients worldwide to deliver exceptional digital solutions that drive business growth.
+            </p>
+            
+            <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <li class="flex items-center">
+                <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mr-4">
+                  <i class="fas fa-code text-lg"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-gray-800">5+ Years Experience</h4>
+                  <p class="text-gray-600 text-sm">Professional Development</p>
+                </div>
+              </li>
+              <li class="flex items-center">
+                <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mr-4">
+                  <i class="fas fa-laptop-code text-lg"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-gray-800">20+ Projects</h4>
+                  <p class="text-gray-600 text-sm">Successfully Completed</p>
+                </div>
+              </li>
+              <li class="flex items-center">
+                <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mr-4">
+                  <i class="fas fa-mobile-alt text-lg"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-gray-800">Web & Mobile</h4>
+                  <p class="text-gray-600 text-sm">Development Expertise</p>
+                </div>
+              </li>
+              <li class="flex items-center">
+                <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mr-4">
+                  <i class="fas fa-globe text-lg"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-gray-800">Remote Work</h4>
+                  <p class="text-gray-600 text-sm">Global Collaboration</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="w-full md:w-1/2 reveal">
+            <div class="bg-blue-50 p-8 rounded-xl shadow-lg">
+              <h3 class="text-2xl font-bold text-gray-800 mb-6">My Skills</h3>
+              
+              <div class="mb-6">
+                <div class="flex justify-between mb-2">
+                  <span class="font-medium text-gray-700">Frontend Development</span>
+                  <span class="text-blue-600 font-medium">90%</span>
+                </div>
+                <div class="skill-progress">
+                  <div class="skill-bar" data-width="90%"></div>
+                </div>
+              </div>
+              
+              <div class="mb-6">
+                <div class="flex justify-between mb-2">
+                  <span class="font-medium text-gray-700">Backend Development</span>
+                  <span class="text-blue-600 font-medium">85%</span>
+                </div>
+                <div class="skill-progress">
+                  <div class="skill-bar" data-width="85%"></div>
+                </div>
+              </div>
+              
+              <div class="mb-6">
+                <div class="flex justify-between mb-2">
+                  <span class="font-medium text-gray-700">Mobile Development</span>
+                  <span class="text-blue-600 font-medium">80%</span>
+                </div>
+                <div class="skill-progress">
+                  <div class="skill-bar" data-width="80%"></div>
+                </div>
+              </div>
+              
+              <div class="mb-6">
+                <div class="flex justify-between mb-2">
+                  <span class="font-medium text-gray-700">UX/UI Design</span>
+                  <span class="text-blue-600 font-medium">75%</span>
+                </div>
+                <div class="skill-progress">
+                  <div class="skill-bar" data-width="75%"></div>
+                </div>
+              </div>
+              
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span class="font-medium text-gray-700">Project Management</span>
+                  <span class="text-blue-600 font-medium">85%</span>
+                </div>
+                <div class="skill-progress">
+                  <div class="skill-bar" data-width="85%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16 reveal">
+          <p class="text-blue-600 font-medium mb-2 uppercase tracking-wider">My Journey</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Work Experience</h2>
+          <div class="w-20 h-1 bg-blue-600 mx-auto mt-4"></div>
+        </div>
+        
+        <div class="max-w-3xl mx-auto">
+          <div class="relative timeline">
+            <div class="timeline-line"></div>
+            
+            <!-- Experience 1 -->
+            <div class="ml-12 md:ml-16 mb-16 relative reveal">
+              <div class="timeline-dot"></div>
+              <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg border-l-4 border-blue-600">
+                <div class="flex flex-wrap justify-between items-start mb-4">
+                  <h3 class="text-xl font-bold text-gray-800">Freelance Full-Stack Developer</h3>
+                  <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm font-medium">2020 - Present</span>
+                </div>
+                <p class="text-gray-600 mb-4">Remote</p>
+                <ul class="list-disc list-inside text-gray-600 mb-4 space-y-2">
+                  <li>Developed 5+ web and mobile applications for clients across different industries</li>
+                  <li>Optimized APIs resulting in 30% improved performance</li>
+                  <li>Implemented responsive designs and improved UX/UI for multiple client websites</li>
+                  <li>Provided ongoing maintenance and support for client applications</li>
+                </ul>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">React</span>
+                  <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Rails</span>
+                  <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Flutter</span>
+                  <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">API Design</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Experience 2 -->
+            <div class="ml-12 md:ml-16 mb-16 relative reveal">
+              <div class="timeline-dot"></div>
+              <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg border-l-4 border-blue-600">
+                <div class="flex flex-wrap justify-between items-start mb-4">
+                  <h3 class="text-xl font-bold text-gray-800">Mobile Developer</h3>
+                  <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm font-medium">2020 - 2021</span>
+                </div>
+                <p class="text-gray-600 mb-4">RedConnect, Lomé</p>
+                <ul class="list-disc list-inside text-gray-600 mb-4 space-y-2">
+                  <li>Developed 7 Flutter applications for both iOS and Android platforms</li>
+                  <li>Reduced application latency by 25% through code optimization</li>
+                  <li>Improved code quality by 40% by implementing best practices</li>
+                  <li>Collaborated with design team to implement pixel-perfect UI designs</li>
+                </ul>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Flutter</span>
+                  <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Dart</span>
+                  <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Firebase</span>
+                  <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">REST APIs</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Experience 3 -->
+            <div class="ml-12 md:ml-16 mb-6 relative reveal">
+              <div class="timeline-dot"></div>
+              <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg border-l-4 border-blue-600">
+                <div class="flex flex-wrap justify-between items-start mb-4">
+                  <h3 class="text-xl font-bold text-gray-800">Project Manager</h3>
+                  <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm font-medium">2018 - 2020</span>
+                </div>
+                <p class="text-gray-600 mb-4">Nogdevhouse, Togo</p>
+                <ul class="list-disc list-inside text-gray-600 mb-4 space-y-2">
+                  <li>Managed 4 full-stack projects simultaneously</li>
+                  <li>Led the migration of legacy systems to React/Rails, improving performance by 50%</li>
+                  <li>Coordinated team of 5 developers to meet project deadlines</li>
+                  <li>Implemented Agile methodologies to improve development workflow</li>
+                </ul>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Project Management</span>
+                  <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Agile</span>
+                  <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Team Leadership</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Education Section -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16 reveal">
+          <p class="text-blue-600 font-medium mb-2 uppercase tracking-wider">My Learning Path</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Education</h2>
+          <div class="w-20 h-1 bg-blue-600 mx-auto mt-4"></div>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+          <div class="bg-gray-50 rounded-lg p-8 shadow-lg reveal">
+            <div class="flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-lg mb-6 mx-auto">
+              <i class="fas fa-laptop-code text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-center text-gray-800 mb-2">Microverse</h3>
+            <p class="text-center text-gray-600 mb-4">2022 - 2023</p>
+            <p class="text-center text-gray-600 mb-4">Remote Learning</p>
+            <div class="bg-white rounded-lg p-4">
+              <p class="text-gray-600 mb-2 font-medium">1300+ Hours of Coding</p>
+              <ul class="list-disc list-inside text-gray-600 space-y-1 mb-4">
+                <li>Ruby on Rails</li>
+                <li>JavaScript ES6+</li>
+                <li>React & Redux</li>
+                <li>Pair Programming</li>
+              </ul>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-sm">Full-Stack</span>
+                <span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-sm">Remote Learning</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-gray-50 rounded-lg p-8 shadow-lg reveal">
+            <div class="flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-lg mb-6 mx-auto">
+              <i class="fas fa-graduation-cap text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-center text-gray-800 mb-2">Defitech</h3>
+            <p class="text-center text-gray-600 mb-4">2013 - 2015</p>
+            <p class="text-center text-gray-600 mb-4">Lomé, Togo</p>
+            <div class="bg-white rounded-lg p-4">
+              <p class="text-gray-600 mb-2 font-medium">2500+ Hours of Coursework</p>
+              <ul class="list-disc list-inside text-gray-600 space-y-1 mb-4">
+                <li>Java Programming</li>
+                <li>PHP Development</li>
+                <li>Algorithms & Data Structures</li>
+                <li>Object-Oriented Programming</li>
+              </ul>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-sm">Computer Science</span>
+                <span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-sm">Programming</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16 reveal">
+          <p class="text-blue-600 font-medium mb-2 uppercase tracking-wider">What I Do</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Technical Skills</h2>
+          <div class="w-20 h-1 bg-blue-600 mx-auto mt-4"></div>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          <!-- Frontend Skills -->
+          <div class="bg-white rounded-xl p-6 shadow-lg reveal">
+            <div class="flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full mb-6 mx-auto">
+              <i class="fas fa-code text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-center text-gray-800 mb-6">Frontend</h3>
+            <ul class="space-y-4">
+              <li class="flex items-center">
+                <i class="fab fa-react text-blue-600 mr-3 text-lg"></i>
+                <span class="text-gray-700">React & Redux</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fab fa-js text-blue-600 mr-3 text-lg"></i>
+                <span class="text-gray-700">JavaScript (ES6+)</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fab fa-bootstrap text-blue-600 mr-3 text-lg"></i>
+                <span class="text-gray-700">Bootstrap & CSS</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fab fa-html5 text-blue-600 mr-3 text-lg"></i>
+                <span class="text-gray-700">HTML5</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fab fa-figma text-blue-600 mr-3 text-lg"></i>
+                <span class="text-gray-700">Figma & Adobe XD</span>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- Backend Skills -->
+          <div class="bg-white rounded-xl p-6 shadow-lg reveal">
+            <div class="flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full mb-6 mx-auto">
+              <i class="fas fa-server text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-center text-gray-800 mb-6">Backend</h3>
+            <ul class="space-y-4">
+              <li class="flex items-center">
+                <i class="fas fa-gem text-blue-600 mr-3 text-lg"></i>
+                <span class="text-gray-700">Ruby on Rails</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fab fa-php text-blue-600 mr-3 text-lg"></i>
+                <span class="text-gray-700">PHP</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-exchange-alt text-blue-600 mr-3 text-lg"></i>
+                <span class="text-gray-700">REST APIs</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-database text-blue-600 mr-3 text-lg"></i>
+                <span class="text-gray-700">SQL & NoSQL</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-code-branch text-blue-600 mr-3 text-lg"></i>
+                <span class="text-gray-700">Clean Code</span>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- Mobile Skills -->
+          <div class="bg-white rounded-xl p-6 shadow-lg reveal">
+            <div class="flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full mb-6 mx-auto">
+              <i class="fas fa-mobile-alt text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-center text-gray-800 mb-6">Mobile</h3>
+            <ul class="space-y-4">
+              <li class="flex items-center">
+                <i class="fab fa-android text-blue-600 mr-3 text-lg"></i>
+                <span class="text-gray-700">Android Development</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fab fa-apple text-blue-600 mr-3 text-lg"></i>
+                <span class="text-gray-700">iOS Development</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-feather text-blue-600 mr-3 text-lg"></i>
+                <span class="text-gray-700">Flutter</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-mobile text-blue-600 mr-3 text-lg"></i>
+                <span class="text-gray-700">Responsive Design</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-plug text-blue-600 mr-3 text-lg"></i>
+                <span class="text-gray-700">Native Integrations</span>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- Methods Skills -->
+          <div class="bg-white rounded-xl p-6 shadow-lg reveal">
+            <div class="flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full mb-6 mx-auto">
+              <i class="fas fa-tasks text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-center text-gray-800 mb-6">Methods</h3>
+            <ul class="space-y-4">
+              <li class="flex items-center">
+                <i class="fas fa-sync-alt text-blue-600 mr-3 text-lg"></i>
+                <span class="text-gray-700">Agile Development</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fab fa-git-alt text-blue-600 mr-3 text-lg"></i>
+                <span class="text-gray-700">Git & GitHub</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-users text-blue-600 mr-3 text-lg"></i>
+                <span class="text-gray-700">Pair Programming</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-vial text-blue-600 mr-3 text-lg"></i>
+                <span class="text-gray-700">TDD & BDD</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-cloud text-blue-600 mr-3 text-lg"></i>
+                <span class="text-gray-700">DevOps & CI/CD</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Languages Section -->
+        <div class="mt-16 max-w-3xl mx-auto reveal">
+          <h3 class="text-2xl font-bold text-center text-gray-800 mb-10">Languages</h3>
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+              <div class="flex justify-between mb-3">
+                <span class="font-medium text-gray-800">English</span>
+                <span class="text-blue-600 font-medium">Advanced</span>
+              </div>
+              <div class="language-level">
+                <div class="language-progress" style="width: 85%"></div>
+              </div>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+              <div class="flex justify-between mb-3">
+                <span class="font-medium text-gray-800">French</span>
+                <span class="text-blue-600 font-medium">Proficient</span>
+              </div>
+              <div class="language-level">
+                <div class="language-progress" style="width: 90%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16 reveal">
+          <p class="text-blue-600 font-medium mb-2 uppercase tracking-wider">My Work</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Recent Projects</h2>
+          <div class="w-20 h-1 bg-blue-600 mx-auto mt-4"></div>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project 1 -->
+          <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg reveal">
+            <div class="h-56 overflow-hidden">
+              <img src="https://cdn.pixabay.com/photo/2020/04/03/06/35/work-4997565_1280.jpg" alt="Project 1" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">E-commerce Platform</h3>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-2 py-1 bg-blue-50 text-blue-600 rounded-md text-xs font-medium">React</span>
+                <span class="px-2 py-1 bg-blue-50 text-blue-600 rounded-md text-xs font-medium">Redux</span>
+                <span class="px-2 py-1 bg-blue-50 text-blue-600 rounded-md text-xs font-medium">Rails API</span>
+              </div>
+              <p class="text-gray-600 mb-6">A full-featured e-commerce platform with payment integration, real-time inventory management, and a responsive admin dashboard.</p>
+              <div class="flex gap-4">
+                <a href="javascript:void(0)" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                  <i class="fab fa-github mr-2"></i> Code
+                </a>
+                <a href="javascript:void(0)" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                  <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Project 2 -->
+          <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg reveal">
+            <div class="h-56 overflow-hidden">
+              <img src="https://cdn.pixabay.com/photo/2017/12/12/12/19/bitcoin-3014614_1280.jpg" alt="Project 2" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Crypto Tracker App</h3>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-2 py-1 bg-blue-50 text-blue-600 rounded-md text-xs font-medium">Flutter</span>
+                <span class="px-2 py-1 bg-blue-50 text-blue-600 rounded-md text-xs font-medium">Firebase</span>
+                <span class="px-2 py-1 bg-blue-50 text-blue-600 rounded-md text-xs font-medium">REST API</span>
+              </div>
+              <p class="text-gray-600 mb-6">A mobile application that tracks cryptocurrency prices in real-time, with customizable alerts, portfolio management, and market news.</p>
+              <div class="flex gap-4">
+                <a href="javascript:void(0)" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                  <i class="fab fa-github mr-2"></i> Code
+                </a>
+                <a href="javascript:void(0)" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                  <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Project 3 -->
+          <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg reveal">
+            <div class="h-56 overflow-hidden">
+              <img src="https://cdn.pixabay.com/photo/2019/10/09/07/28/development-4536630_1280.png" alt="Project 3" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Task Management System</h3>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-2 py-1 bg-blue-50 text-blue-600 rounded-md text-xs font-medium">PHP</span>
+                <span class="px-2 py-1 bg-blue-50 text-blue-600 rounded-md text-xs font-medium">MySQL</span>
+                <span class="px-2 py-1 bg-blue-50 text-blue-600 rounded-md text-xs font-medium">jQuery</span>
+              </div>
+              <p class="text-gray-600 mb-6">A comprehensive task management application for teams with role-based access control, deadline tracking, and performance analytics.</p>
+              <div class="flex gap-4">
+                <a href="javascript:void(0)" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                  <i class="fab fa-github mr-2"></i> Code
+                </a>
+                <a href="javascript:void(0)" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                  <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Project 4 -->
+          <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg reveal">
+            <div class="h-56 overflow-hidden">
+              <img src="https://cdn.pixabay.com/photo/2016/03/09/09/22/workplace-1245776_1280.jpg" alt="Project 4" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Real Estate Platform</h3>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-2 py-1 bg-blue-50 text-blue-600 rounded-md text-xs font-medium">React</span>
+                <span class="px-2 py-1 bg-blue-50 text-blue-600 rounded-md text-xs font-medium">Node.js</span>
+                <span class="px-2 py-1 bg-blue-50 text-blue-600 rounded-md text-xs font-medium">MongoDB</span>
+              </div>
+              <p class="text-gray-600 mb-6">An interactive real estate listing platform with property search filters, virtual tours, and agent messaging capabilities.</p>
+              <div class="flex gap-4">
+                <a href="javascript:void(0)" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                  <i class="fab fa-github mr-2"></i> Code
+                </a>
+                <a href="javascript:void(0)" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                  <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Project 5 -->
+          <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg reveal">
+            <div class="h-56 overflow-hidden">
+              <img src="https://cdn.pixabay.com/photo/2017/08/10/08/47/laptop-2620118_1280.jpg" alt="Project 5" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Learning Management System</h3>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-2 py-1 bg-blue-50 text-blue-600 rounded-md text-xs font-medium">Ruby on Rails</span>
+                <span class="px-2 py-1 bg-blue-50 text-blue-600 rounded-md text-xs font-medium">PostgreSQL</span>
+                <span class="px-2 py-1 bg-blue-50 text-blue-600 rounded-md text-xs font-medium">Hotwire</span>
+              </div>
+              <p class="text-gray-600 mb-6">A comprehensive LMS with course creation tools, student progress tracking, quiz modules, and certificate generation.</p>
+              <div class="flex gap-4">
+                <a href="javascript:void(0)" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                  <i class="fab fa-github mr-2"></i> Code
+                </a>
+                <a href="javascript:void(0)" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                  <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Project 6 -->
+          <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg reveal">
+            <div class="h-56 overflow-hidden">
+              <img src="https://cdn.pixabay.com/photo/2020/05/18/16/17/social-media-5187243_1280.png" alt="Project 6" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Social Media Dashboard</h3>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-2 py-1 bg-blue-50 text-blue-600 rounded-md text-xs font-medium">Vue.js</span>
+                <span class="px-2 py-1 bg-blue-50 text-blue-600 rounded-md text-xs font-medium">Express</span>
+                <span class="px-2 py-1 bg-blue-50 text-blue-600 rounded-md text-xs font-medium">GraphQL</span>
+              </div>
+              <p class="text-gray-600 mb-6">An analytics dashboard for social media managers with content scheduling, performance metrics, and automated reporting.</p>
+              <div class="flex gap-4">
+                <a href="javascript:void(0)" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                  <i class="fab fa-github mr-2"></i> Code
+                </a>
+                <a href="javascript:void(0)" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                  <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="text-center mt-12 reveal">
+          <a href="javascript:void(0)" class="btn-primary inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium shadow-lg">
+            View All Projects
           </a>
         </div>
-
-      </section>
+      </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16 reveal">
+          <p class="text-blue-600 font-medium mb-2 uppercase tracking-wider">Get In Touch</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Contact Me</h2>
+          <div class="w-20 h-1 bg-blue-600 mx-auto mt-4"></div>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+          <div class="reveal">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6">Let's Work Together</h3>
+            <p class="text-gray-600 mb-8 leading-relaxed">
+              I'm currently available for freelance work and open to new opportunities. If you have a project that needs expertise in web or mobile development, feel free to contact me.
+            </p>
+            
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                  <i class="fas fa-phone-alt"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-gray-800 mb-1">Phone</h4>
+                  <p class="text-gray-600">+228 90 22 22 45</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-gray-800 mb-1">Email</h4>
+                  <p class="text-gray-600">hopeforkoami@gmail.com</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-gray-800 mb-1">Location</h4>
+                  <p class="text-gray-600">Mango, Togo</p>
+                </div>
+              </div>
+              
+              <div class="flex items-center space-x-4 mt-8">
+                <a href="javascript:void(0)" class="w-10 h-10 bg-blue-600 hover:bg-blue-700 text-white rounded-full flex items-center justify-center transition-colors">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="javascript:void(0)" class="w-10 h-10 bg-gray-800 hover:bg-gray-900 text-white rounded-full flex items-center justify-center transition-colors">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="javascript:void(0)" class="w-10 h-10 bg-blue-400 hover:bg-blue-500 text-white rounded-full flex items-center justify-center transition-colors">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="javascript:void(0)" class="w-10 h-10 bg-red-600 hover:bg-red-700 text-white rounded-full flex items-center justify-center transition-colors">
+                  <i class="fab fa-youtube"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white p-8 rounded-xl shadow-lg reveal">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6">Send Me a Message</h3>
+            <form id="contact-form" class="space-y-6">
+              <div>
+                <label for="name" class="block text-gray-700 font-medium mb-2" data-lang-key="contact.fullName">Full Name</label>
+                <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Your name" required>
+              </div>
+              
+              <div>
+                <label for="email" class="block text-gray-700 font-medium mb-2" data-lang-key="contact.emailAddress">Email Address</label>
+                <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Your email" required>
+              </div>
+              
+              <div>
+                <label for="message" class="block text-gray-700 font-medium mb-2" data-lang-key="contact.message">Message</label>
+                <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Your message" required></textarea>
+              </div>
+              
+              <div>
+                <button type="submit" id="submit-btn" class="btn-primary w-full bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium shadow-lg flex items-center justify-center" data-lang-key="contact.send">
+                  <span>Send Message</span>
+                </button>
+                <div id="form-status" class="mt-4 text-center hidden"></div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row md:justify-between items-center">
+        <div class="mb-6 md:mb-0">
+          <h3 class="text-2xl font-bold mb-2">KOAMI NOGBEDJI</h3>
+          <p class="text-gray-400">Full-Stack Developer</p>
+        </div>
+        
+        <div class="mb-6 md:mb-0">
+          <p class="text-gray-400">© 2025 All rights reserved.</p>
+        </div>
+        
+        <div class="flex space-x-4">
+          <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">
+            <i class="fab fa-linkedin text-xl"></i>
+          </a>
+          <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">
+            <i class="fab fa-github text-xl"></i>
+          </a>
+          <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">
+            <i class="fab fa-twitter text-xl"></i>
+          </a>
+          <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">
+            <i class="fab fa-instagram text-xl"></i>
+          </a>
+        </div>
+      </div>
     </div>
-    <section id="my_work"  class="work_section">
-      <h1 class="work_section_title">My Recent <br class="title_line"> Works</h1>
-      <div class="delimiter">
-      </div>
-      <div class="popup_work_details">
-        <!--modal start-->
-        <div class="modal_popup">
-         <div class="modal_container">
-           <div class="modal_close_button">
-             <i class="fa-solid fa-xmark "></i>
-           </div>
-         <div class="modal_image">
-     
-         </div>
-         <div class="desktop_title">
-           <h2 class="modal_title">
-           Keeping track of hundreds of components
-         </h2>
-         <div class="buttons for_desktop">
-           <button class="left_button modal_button">See live <img src="assets/see_live_icon.svg" alt="see live icon"> </button>
-           <button class="left_button modal_button">See Source <img src="assets/github_icon.svg" alt="github icon"> </button>
-         </div>
-         </div>
-         
-         <ul class="modal_popup_technologies">
-           <li class="technologie_items">Ruby on rails</li>
-           <li class="technologie_items">Css</li>
-           <li class="technologie_items">JavaScript</li>
-         </ul>
-         <p class="popup_description">
-           Lorem Ipsum is simply dummy text of the printing
-            and typesetting industry. Lorem Ipsum has been the 
-            industry's standard dummy text ever since the 1500s,
-             when an unknown printer took a galley of type and 
-             scrambled it 1960s with the releaLorem Ipsum is 
-             simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's st
-              andard dummy text ever since the 1500s, when an u
-              nknown printer took a galley of type and scrambled
-               it 1960s with the relea
-         </p>
-         <div class="buttons for_mobile">
-           <button class="left_button modal_button">See live <img src="assets/see_live_icon.svg" alt="see live icon"> </button>
-           <button class="left_button modal_button">See Source <img src="assets/github_icon.svg" alt="github icon"> </button>
-         </div>
-     
-       </div>
-       </div>
-        <!--modal end-->
-       </div>
+  </footer>
+  
+  <!-- Back to top button -->
+  <button id="back-to-top" class="fixed bottom-6 right-6 bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300 z-50">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script>
+  // Initialize translations object
+  const translations = {
+    en: {
+      nav: {
+        home: 'Home',
+        about: 'About',
+        experience: 'Experience',
+        projects: 'Projects',
+        contact: 'Contact',
+        cv: 'CV',
+        downloadCv: 'Download CV'
+      },
+      hero: {
+        hello: "Hello, I'm",
+        developer: "Full-Stack Developer",
+        webDev: "Web Developer",
+        mobileDev: "Mobile Developer",
+        uiUx: "UI/UX Enthusiast",
+        specializing: "Specializing in Web & Mobile development with expertise in JavaScript, React, Ruby on Rails, PHP, and Flutter. I build high-performance, user-focused applications that deliver exceptional experiences.",
+        hireMe: "Hire Me",
+        viewProjects: "View Projects"
+      },
+      about: {
+        title: "About Me",
+        subtitle: "Who I Am",
+        intro: "Full-Stack Developer from Mango, Togo",
+        description1: "I'm a passionate Full-Stack Developer with a focus on creating efficient, scalable, and user-friendly applications. With over 5 years of experience in web and mobile development, I've helped businesses of all sizes transform their digital presence and operations.",
+        description2: "My journey began in Togo, where I developed a passion for coding and problem-solving. Since then, I've embraced the freelance lifestyle, collaborating with clients worldwide to deliver exceptional digital solutions that drive business growth.",
+        experience: "5+ Years Experience",
+        professional: "Professional Development",
+        projects: "20+ Projects",
+        completed: "Successfully Completed",
+        webMobile: "Web & Mobile",
+        expertise: "Development Expertise",
+        remote: "Remote Work",
+        collaboration: "Global Collaboration"
+      },
+      // ... add more translations for other sections
+      contact: {
+        getInTouch: "Get In Touch",
+        contactMe: "Contact Me",
+        workTogether: "Let's Work Together",
+        available: "I'm currently available for freelance work and open to new opportunities. If you have a project that needs expertise in web or mobile development, feel free to contact me.",
+        phone: "Phone",
+        email: "Email",
+        location: "Location",
+        sendMessage: "Send Me a Message",
+        fullName: "Full Name",
+        yourName: "Your name",
+        emailAddress: "Email Address",
+        yourEmail: "Your email",
+        message: "Message",
+        yourMessage: "Your message",
+        send: "Send Message",
+        sending: "Sending...",
+        sendingMessage: "Sending your message...",
+        sentSuccess: "Sent Successfully",
+        messageSuccess: "Your message has been sent successfully! I'll get back to you soon."
+      },
+      footer: {
+        rights: "© 2025 All rights reserved."
+      }
+    },
+    fr: {
+      nav: {
+        home: 'Accueil',
+        about: 'À propos',
+        experience: 'Expérience',
+        projects: 'Projets',
+        contact: 'Contact',
+        cv: 'CV',
+        downloadCv: 'Télécharger CV'
+      },
+      hero: {
+        hello: "Bonjour, je suis",
+        developer: "Développeur Full-Stack",
+        webDev: "Développeur Web",
+        mobileDev: "Développeur Mobile",
+        uiUx: "Passionné d'UI/UX",
+        specializing: "Spécialisé dans le développement Web & Mobile avec une expertise en JavaScript, React, Ruby on Rails, PHP et Flutter. Je construis des applications performantes, axées sur l'utilisateur qui offrent des expériences exceptionnelles.",
+        hireMe: "Engagez-moi",
+        viewProjects: "Voir les Projets"
+      },
+      about: {
+        title: "À propos de moi",
+        subtitle: "Qui je suis",
+        intro: "Développeur Full-Stack de Mango, Togo",
+        description1: "Je suis un développeur Full-Stack passionné par la création d'applications efficaces, évolutives et conviviales. Avec plus de 5 ans d'expérience en développement web et mobile, j'ai aidé des entreprises de toutes tailles à transformer leur présence numérique et leurs opérations.",
+        description2: "Mon parcours a commencé au Togo, où j'ai développé une passion pour la programmation et la résolution de problèmes. Depuis, j'ai adopté le style de vie freelance, collaborant avec des clients du monde entier pour fournir des solutions numériques exceptionnelles qui favorisent la croissance des entreprises.",
+        experience: "5+ ans d'expérience",
+        professional: "Développement Professionnel",
+        projects: "20+ Projets",
+        completed: "Réalisés avec succès",
+        webMobile: "Web & Mobile",
+        expertise: "Expertise en développement",
+        remote: "Travail à distance",
+        collaboration: "Collaboration mondiale"
+      },
+      // ... add more translations for other sections
+      contact: {
+        getInTouch: "Prenez Contact",
+        contactMe: "Contactez-moi",
+        workTogether: "Travaillons Ensemble",
+        available: "Je suis actuellement disponible pour du travail en freelance et ouvert à de nouvelles opportunités. Si vous avez un projet qui nécessite une expertise en développement web ou mobile, n'hésitez pas à me contacter.",
+        phone: "Téléphone",
+        email: "Email",
+        location: "Emplacement",
+        sendMessage: "Envoyez-moi un Message",
+        fullName: "Nom Complet",
+        yourName: "Votre nom",
+        emailAddress: "Adresse Email",
+        yourEmail: "Votre email",
+        message: "Message",
+        yourMessage: "Votre message",
+        send: "Envoyer le Message",
+        sending: "Envoi en cours...",
+        sendingMessage: "Envoi de votre message...",
+        sentSuccess: "Envoyé avec Succès",
+        messageSuccess: "Votre message a été envoyé avec succès! Je vous répondrai bientôt."
+      },
+      footer: {
+        rights: "© 2025 Tous droits réservés."
+      }
+    }
+  };
+</script>
+
+<script id="app-script">
+  document.addEventListener('DOMContentLoaded', function() {
+    // Language switching functionality
+    let currentLang = localStorage.getItem('currentLang') || 'en';
+    
+    // Helper function to get translations
+    function t(path) {
+      const keys = path.split('.');
+      let value = translations[currentLang];
+      for (const key of keys) {
+        if (value && value[key] !== undefined) {
+          value = value[key];
+        } else {
+          // Fallback to English if translation is missing
+          value = path.split('.').reduce((o, i) => o && o[i] ? o[i] : undefined, translations['en']);
+          break;
+        }
+      }
+      return value || path; // Return the path as fallback if translation doesn't exist
+    }
+    
+    // Function to update UI language
+    function updateLanguage() {
+      // Update active state of language buttons
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        if (btn.dataset.lang === currentLang) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
       
-      <div class="work_section_content">
+      // Update all elements with data-lang-key attribute
+      document.querySelectorAll('[data-lang-key]').forEach(el => {
+        const key = el.getAttribute('data-lang-key');
+        const translation = t(key);
+        if (translation) {
+          // Check if the element has innerHTML containing icons or other elements
+          if (el.children.length > 0 && el.innerHTML.includes('<i class=')) {
+            // Preserve the icon
+            const icon = el.querySelector('i');
+            if (icon) {
+              el.innerHTML = '';
+              el.appendChild(icon);
+              el.appendChild(document.createTextNode(' ' + translation));
+            } else {
+              el.textContent = translation;
+            }
+          } else {
+            el.textContent = translation;
+          }
+        }
+      });
+      
+      // Update specific elements
+      if (document.getElementById('typing-text')) {
+        const texts = [t('hero.developer'), t('hero.webDev'), t('hero.mobileDev'), t('hero.uiUx')];
+        texts_to_type = texts;
+      }
+      
+      // Update form placeholders
+      if (document.getElementById('name')) {
+        document.getElementById('name').placeholder = t('contact.yourName');
+      }
+      if (document.getElementById('email')) {
+        document.getElementById('email').placeholder = t('contact.yourEmail');
+      }
+      if (document.getElementById('message')) {
+        document.getElementById('message').placeholder = t('contact.yourMessage');
+      }
+      
+      // Save language preference
+      localStorage.setItem('currentLang', currentLang);
+    }
+    
+    // Add click handlers to language buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        currentLang = btn.dataset.lang;
+        updateLanguage();
+      });
+    });
+    
+    // Initialize language on page load
+    updateLanguage();
+    
+    // Global variable for typing effect
+    let texts_to_type = [t('hero.developer'), t('hero.webDev'), t('hero.mobileDev'), t('hero.uiUx')];
+    
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    let isOpen = false;
+    
+    mobileMenuButton.addEventListener('click', function() {
+      isOpen = !isOpen;
+      mobileMenuButton.innerHTML = isOpen ? '<i class="fas fa-times text-2xl"></i>' : '<i class="fas fa-bars text-2xl"></i>';
+      
+      if (isOpen) {
+        mobileMenu.style.height = 'auto';
+        mobileMenu.style.opacity = '1';
+        const height = mobileMenu.offsetHeight + 'px';
+        mobileMenu.style.height = '0';
+        setTimeout(() => {
+          mobileMenu.style.height = height;
+        }, 10);
+      } else {
+        mobileMenu.style.height = '0';
+        mobileMenu.style.opacity = '0';
+      }
+    });
+    
+    // Close mobile menu when clicking on links
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        isOpen = false;
+        mobileMenuButton.innerHTML = '<i class="fas fa-bars text-2xl"></i>';
+        mobileMenu.style.height = '0';
+        mobileMenu.style.opacity = '0';
+      });
+    });
+    
+    // Scroll reveal animation
+    function reveal() {
+      const reveals = document.querySelectorAll('.reveal');
+      
+      reveals.forEach(element => {
+        const windowHeight = window.innerHeight;
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150;
         
-      </div>
-    </section>
-    <section id="about_me" class="about_me_section">
-      <h2 class="about_me_title">About me</h2>
-      <div class="about_me_paragraphe">
-        I can help you build a product feature or website Look through some of my
-        work and experience! if you like what you see and have a project you need coded,
-        don't hesitate to contact me.
-      </div>
-      <button class="get_my_resume_button" type="button" >Get My Resume</button>
-    </section>
-    <ul class="other_items_section">
-      <li class="other_item">
-        <img class="item_logo" src="assets/languages.png" alt="language logo" />
-        <h4 class="item_name">Languages</h4>
-        <ul class="items_sub_list">
-          <li class="items_sub">JavaScript</li>
-          <li class="items_sub">Ruby</li>
-          <li class="items_sub">html</li>
-          <li class="items_sub">css</li>
-        </ul>
-      </li>
-      <li class="other_item">
-        <img class="item_logo" src="assets/frameworks.png" alt="language logo" />
-        <h4 class="item_name">Frameworks</h4>
-        <ul class="items_sub_list">
-          <li class="items_sub">Bootstrap</li>
-          <li class="items_sub">Ruby on rails</li>
-          <li class="items_sub">RSpec</li>
-          <li class="items_sub">Capybara</li>
-          <li class="items_sub">Selenium</li>
-        </ul>
-      </li>
-      <li class="other_item">
-        <img class="item_logo" src="assets/skills.png" alt="language logo" />
-        <h4 class="item_name">Skills</h4>
-        <ul class="items_sub_list">
-          <li class="items_sub">Codekit</li>
-          <li class="items_sub">GitHub</li>
-          <li class="items_sub">Codepen</li>
-
-          <li class="items_sub">Gitlab</li>
-          <li class="items_sub">Terminal</li>
-        </ul>
-      </li>
-    </ul>
-    <footer id="contact_me" class="portofolio_footer">
-      <div class="contact_me_section"> 
-        <div class="completed_form">
-          <h1 class="contact_form_title">
-          I'm always interested in hearing about new projects, so if you'd like to chat please get in touch.
-          </h1>
-          <form class="contact_form" action="https://formspree.io/f/mknegjnj" method="POST">
-            <input type="text" name="clientName" class="form_input clientName" placeholder="Full Name" maxlength="30" aria-label="name" required>
-            <input type="email" class="form_input clientEmail" name="clientEmail" placeholder="Email address"  aria-label="email"  required>
-            <textarea id="contact_text_area" class="form_input clientMessage" name="clientMessage" placeholder="write your message here" maxlength="500"  aria-label="message" 
-              required></textarea>
-            <small class="error_message">Error:</small>
-            <button class="submit_button" type="submit">Get in touch</button>
-          </form>
-        </div> 
+        if (elementTop < windowHeight - elementVisible) {
+          element.classList.add('active');
+        }
+      });
+    }
+    
+    window.addEventListener('scroll', reveal);
+    reveal(); // Call on page load
+    
+    // Initialize skill bars
+    const skillBars = document.querySelectorAll('.skill-bar');
+    skillBars.forEach(bar => {
+      const width = bar.dataset.width;
+      setTimeout(() => {
+        bar.style.width = width;
+      }, 500);
+    });
+    
+    // Back to top button
+    const backToTopButton = document.getElementById('back-to-top');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.remove('opacity-0', 'invisible');
+        backToTopButton.classList.add('opacity-100', 'visible');
+      } else {
+        backToTopButton.classList.remove('opacity-100', 'visible');
+        backToTopButton.classList.add('opacity-0', 'invisible');
+      }
+    });
+    
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    
+    // Typing effect
+    const texts = [t('hero.developer'), t('hero.webDev'), t('hero.mobileDev'), t('hero.uiUx')];
+    let count = 0;
+    let index = 0;
+    let currentText = '';
+    let letter = '';
+    
+    function type() {
+      if (count === texts_to_type.length) {
+        count = 0;
+      }
+      currentText = texts_to_type[count];
+      letter = currentText.slice(0, ++index);
+      
+      document.getElementById('typing-text').textContent = letter;
+      
+      if (letter.length === currentText.length) {
+        count++;
+        index = 0;
+        setTimeout(type, 2000);
+      } else {
+        setTimeout(type, 100);
+      }
+    }
+    
+    type();
+    
+    // Form submission
+    const contactForm = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const formStatus = document.getElementById('form-status');
+    
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Show loading state
+      submitBtn.innerHTML = `<i class="fas fa-spinner fa-spin mr-2"></i> ${t('contact.sending')}`;
+      formStatus.classList.remove('hidden');
+      formStatus.innerHTML = `<p class="text-blue-600">${t('contact.sendingMessage')}</p>`;
+      
+      // Simulate API call (would be replaced with actual API in production)
+      setTimeout(() => {
+        submitBtn.innerHTML = `<i class="fas fa-check mr-2"></i> ${t('contact.sentSuccess')}`;
+        formStatus.innerHTML = `<p class="text-green-600">${t('contact.messageSuccess')}</p>`;
         
-
-        <ul id="footer_social" class="main_section_social">
-
-          <li>
-            <a class="social_media_icon">
-              <img src="assets/twitter.svg" alt="twitter icon " />
-            </a>
-          </li>
-          <li>
-            <a class="social_media_icon">
-              <img src="assets/Linkedin_icon.svg" alt="Linkedin icon " />
-            </a>
-          </li>
-          <li>
-            <a class="social_media_icon" id="medium_icon2">
-              <img src="assets/medium.svg" alt="medium icon " />
-            </a>
-          </li>
-          <li>
-            <a class="social_media_icon">
-              <img src="assets/github.svg" alt="github icon " />
-            </a>
-          </li>
-          <li>
-            <a class="social_media_icon">
-              <img src="assets/angellist.svg" alt="angellist icon " />
-            </a>
-          </li>
-        </ul>
-      </div>
-      <a href="#" class="email_div">hopeforkoami@gmail.com</a>
-      <div class="end_point_div"></div>
-    </footer>
-
-  </div>
-  <script src="js/portofolio.js"> </script>
-  <script src="js/contact_form_validation.js"> </script>
+        // Reset form
+        contactForm.reset();
+        
+        // Reset button after delay
+        setTimeout(() => {
+          submitBtn.innerHTML = t('contact.send');
+        }, 3000);
+      }, 1500);
+    });
+    
+    // Active navigation based on scroll
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    window.addEventListener('scroll', () => {
+      let current = '';
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        
+        if (window.pageYOffset >= (sectionTop - sectionHeight / 3)) {
+          current = section.getAttribute('id');
+        }
+      });
+      
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+  });
+</script>
 </body>
-
 </html>
