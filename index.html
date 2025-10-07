@@ -1123,30 +1123,53 @@
       };
 
       try {
-        // Call Magic Loop
-        const res = await fetch(
-          'https://magicloops.dev/api/loop/402ba626-2e28-4b57-9ac3-4f96678fff03/run',
-          {
-            method:  'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body:    JSON.stringify(payload)
-          }
-        );
-        const data = await res.json(); // { success: true }
+  // Configuration EmailJS - Remplacez avec vos vraies valeurs
+  const emailConfig = {
+    serviceId: 'service_8y5a3hh', // Votre Service ID
+    templateId: 'template_7ztnw56', // Votre Template ID
+    publicKey: '6HE-o1I0FwHns4HCH' // Votre Public Key
+  };
 
-        if (data.success) {
-          // Success UI
-          submitBtn.innerHTML   = `<i class="fas fa-check mr-2"></i> ${t('contact.sentSuccess')}`;
-          formStatus.innerHTML  = `<p class="text-green-600">${t('contact.messageSuccess')}</p>`;
-          contactForm.reset();
-        } else {
-          throw new Error('Loop returned failure');
-        }
-      } catch (err) {
-        // Error UI
-        submitBtn.innerHTML  = `<i class="fas fa-exclamation-triangle mr-2"></i> ${t('contact.send')}`;
-        formStatus.innerHTML = `<p class="text-red-600">Oops, something went wrong. Please try again.</p>`;
-      }
+  // Préparer les données pour le template EmailJS
+  const templateParams = {
+    from_name: payload.name || 'Anonyme',
+    from_email: payload.email,
+    to_email: 'hopeforkoami@gmail.com', // Votre email de réception
+    subject: `Nouveau message de ${payload.name || 'Contact'}`,
+    message: payload.message,
+    phone: payload.phone || 'Non fourni',
+    reply_to: payload.email // Pour pouvoir répondre directement
+  };
+
+  // Envoi via EmailJS
+  const res = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      service_id: emailConfig.serviceId,
+      template_id: emailConfig.templateId,
+      user_id: emailConfig.publicKey,
+      template_params: templateParams
+    })
+  });
+
+  // Vérifier la réponse
+  if (res.status === 200) {
+    // Success UI
+    submitBtn.innerHTML = `<i class="fas fa-check mr-2"></i> ${t('contact.sentSuccess')}`;
+    formStatus.innerHTML = `<p class="text-green-600">${t('contact.messageSuccess')}</p>`;
+    contactForm.reset();
+  } else {
+    throw new Error(`EmailJS returned status: ${res.status}`);
+  }
+} catch (err) {
+  // Error UI
+  console.error('Email sending error:', err);
+  submitBtn.innerHTML = `<i class="fas fa-exclamation-triangle mr-2"></i> ${t('contact.send')}`;
+  formStatus.innerHTML = `<p class="text-red-600">Oops, something went wrong. Please try again.</p>`;
+}
 
       // After 3s reset button text
       setTimeout(() => {
