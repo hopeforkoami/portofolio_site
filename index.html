@@ -1134,7 +1134,7 @@
   const templateParams = {
     from_name: payload.name || 'Anonyme',
     from_email: payload.email,
-    to_email: 'hopeforkoami@gmail.com', // Votre email de réception
+    receiver_email: 'hopeforkoami@gmail.com', // Votre email de réception
     subject: `Nouveau message de ${payload.name || 'Contact'}`,
     message: payload.message,
     phone: payload.phone || 'Non fourni',
