@@ -1130,6 +1130,8 @@
     publicKey: '6HE-o1I0FwHns4HCH' // Votre Public Key
   };
 
+  const confirmationTemplateId = 'template_h9v1zig';
+
   // Préparer les données pour le template EmailJS
   const templateParams = {
     from_name: payload.name || 'Anonyme',
@@ -1160,6 +1162,52 @@
     // Success UI
     submitBtn.innerHTML = `<i class="fas fa-check mr-2"></i> ${t('contact.sentSuccess')}`;
     formStatus.innerHTML = `<p class="text-green-600">${t('contact.messageSuccess')}</p>`;
+     // 2. Envoyer l'email de confirmation à l'utilisateur
+    const confirmationParams = {
+      to_name: payload.name || "Client",
+      receiver_email: payload.email,
+      user_name: payload.name || "Client",
+      from_email: "koami@nogdevhouse.com",
+      contact_message: payload.message,
+      reply_time: "24-48 heures",
+      company_name: "KOAMI NOGBEDJI",
+      support_email: "koami@nogdevhouse.com",
+      support_phone: "+228 90 22 22 45 / +44 7520 655615",
+      current_year: new Date().getFullYear().toString(),
+      current_date: new Date().toLocaleDateString('fr-FR')
+    };
+
+    try {
+      const confirmationRes = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          service_id: emailConfig.serviceId,
+          template_id: confirmationTemplateId,
+          user_id: emailConfig.publicKey,
+          template_params: confirmationParams
+        })
+      });
+
+      if (confirmationRes.status === 200) {
+        // Succès complet - les deux emails ont été envoyés
+        console.log('Email de confirmation envoyé avec succès');
+        submitBtn.innerHTML = `<i class="fas fa-check mr-2"></i> ${t('contact.sentSuccess')}`;
+        formStatus.innerHTML = `<p class="text-green-600">${t('contact.messageSuccess')}</p>`;
+      } else {
+        // Premier email réussi mais confirmation échouée
+        console.warn('Email de confirmation échoué, mais message principal envoyé');
+        submitBtn.innerHTML = `<i class="fas fa-check mr-2"></i> ${t('contact.sentSuccess')}`;
+        formStatus.innerHTML = `<p class="text-green-600">Votre message a été envoyé ! (Confirmation en attente)</p>`;
+      }
+
+    } catch (confirmationError) {
+      // Erreur lors de l'envoi de la confirmation
+      console.error('Erreur envoi confirmation:', confirmationError);
+      submitBtn.innerHTML = `<i class="fas fa-check mr-2"></i> ${t('contact.sentSuccess')}`;
+      formStatus.innerHTML = `<p class="text-green-600">Votre message a été envoyé avec succès !</p>`;
+    }
+
     contactForm.reset();
   } else {
     throw new Error(`EmailJS returned status: ${res.status}`);
